@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://bntl0s8gu5qbc"]
+
+[ext_resource type="Script" uid="uid://c7lk8uoq8ynj4" path="res://code/interactables.gd" id="1_4pbkg"]
+
+[node name="Node2D" type="Node2D" unique_id=1076634415]
+
+[node name="Interactables" type="Node2D" parent="." unique_id=2074114935]
+script = ExtResource("1_4pbkg")
+
+[node name="Dialogues" type="Node2D" parent="." unique_id=589698966]

@@ -10,7 +10,8 @@ config_version=5
 
 [application]
 
-config/name="A Knaben Game + We love Potatoes"
+config/name="Pixel Forge Jam #2"
+run/main_scene="uid://bntl0s8gu5qbc"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

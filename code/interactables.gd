@@ -13,7 +13,6 @@ func set_scene(scene_id=0):
 	
 	for interactable_dataset in interactable_data.split("\n",false):
 		var splitted = interactable_dataset.split(",",false)
-		print(splitted)
 		
 		if len(splitted) == 4:
 			splitted.push_back("50")
@@ -54,7 +53,8 @@ func button_pressed(cb):
 			set_scene(send_id)
 
 func _ready():
-	set_scene(0)
+	#set_scene(0)
+	pass
 	
 func _process(dt):
 	pass

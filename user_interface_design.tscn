@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://byctdpue3n03r" path="res://assets/UI/In-Game/pngs/IMG_0434.PNG" id="15_dforc"]
 [ext_resource type="Texture2D" uid="uid://bpw2xrgtduvgm" path="res://assets/UI/In-Game/pngs/IMG_0436.PNG" id="16_mtlwb"]
 [ext_resource type="Texture2D" uid="uid://bi4vey5qvind3" path="res://assets/UI/In-Game/pngs/IMG_0437.PNG" id="17_cqiiw"]
+[ext_resource type="Texture2D" uid="uid://bpwnu2dabtmyx" path="res://assets/UI/In-Game/pngs/IMG_0438.PNG" id="18_s4byb"]
+[ext_resource type="Texture2D" uid="uid://gec6kieox1xx" path="res://assets/UI/In-Game/pngs/IMG_0439.PNG" id="19_61q7v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qrc0i"]
 load_path = "res://.godot/imported/IMG_0402.PNG-aa1ade642368814d907ea3b2d01970c6.ctex"
@@ -108,3 +110,14 @@ texture = ExtResource("16_mtlwb")
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("17_cqiiw")
+
+[node name="TextureRect10" type="TextureRect" parent="CanvasLayer" unique_id=389527340]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("18_s4byb")
+
+[node name="TextureRect11" type="TextureRect" parent="CanvasLayer" unique_id=1924792111]
+offset_left = 20.0
+offset_right = 1940.0
+offset_bottom = 1080.0
+texture = ExtResource("19_61q7v")

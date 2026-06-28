@@ -30,6 +30,7 @@ func _ready():
 		background_images[int(bg_file.split(".",false)[0])] = local_bg_texture
 	
 	#change_scene($RoomViewRoot,0)
+	$DialogueMaster.hide()
 	initiate_scene_set(0,$RoomViewRoot,"DoorTransition")
 	
 	
@@ -83,9 +84,6 @@ func change_scene(child,id):
 		$Background.texture = background_images[id]
 	
 func _process(dt):
-	print("test", self)
-	print("RVR CC: ",$RoomViewRoot.get_child_count())
-	print("current_scene", current_scene)
 	if currently_fading_out:
 		$FadeoutPolygon.self_modulate.a += fadeout_alpha_steps_in_a_second * dt
 		if $FadeoutPolygon.self_modulate.a >= 1:

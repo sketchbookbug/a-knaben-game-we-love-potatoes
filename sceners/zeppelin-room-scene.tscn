@@ -29,3 +29,4 @@ z_index = -10
 position = Vector2(960, 540)
 
 [node name="DialogueMaster" parent="." unique_id=1148411461 instance=ExtResource("3_vetn3")]
+position = Vector2(50, 50)

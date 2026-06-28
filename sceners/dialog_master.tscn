@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://qfwlj3d4pewy"]
 
 [ext_resource type="Script" uid="uid://br66goakt4k2d" path="res://sceners/dialog_master.gd" id="1_gjkys"]
+[ext_resource type="Script" uid="uid://g6v0qma13jwm" path="res://sceners/dialogue_text_manager.gd" id="2_3hyeg"]
 
 [node name="DialogMaster" type="Node2D" unique_id=1148411461]
 script = ExtResource("1_gjkys")
+
+[node name="DialogueTextManager" type="Node" parent="." unique_id=1586931297]
+script = ExtResource("2_3hyeg")

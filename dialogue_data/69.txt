@@ -1,0 +1,10 @@
+#talky guy 1 = jar jar binks
+1
+#all the lines of dialog
+#expression;stuff to say
+1;Michse werden dichse essen und es genießen, jawohl! (:
+#giving the ending options
+[ENDCONVO]
+#next dialogue id;stuff to say in the button
+70;Welp... im gay now :3
+0;Erm... what the sigma?

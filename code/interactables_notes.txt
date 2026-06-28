@@ -23,4 +23,20 @@ format for interactables:
 	create_type,send_id,centerx,centery,sizex,sizey
 	
 dialog ids:
-	0 = test dialog
+	0 = end the dialog system; go back to normal stuff
+	69 = test dialog
+	
+format for dialogues:
+	#talky guy 1 = jar jar binks
+	1
+	#all the lines of dialog
+	#expression;stuff to say
+	1;Michse werden dichse essen und es genießen, jawohl! (:
+	#giving the ending options
+	[ENDCONVO]
+	#next dialogue id;stuff to say in the button
+	70;Erm... what the sigma?
+	0;Welp... im gay now. Bye :3
+	
+talkies:
+	1 = jar jar binks (yes he's necessary)

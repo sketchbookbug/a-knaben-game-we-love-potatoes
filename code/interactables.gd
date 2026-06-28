@@ -4,7 +4,6 @@ func set_scene(scene_id=0):
 	
 	var i = 0
 	for child in get_children():
-		print(child,"child nr. ",i+1," go brr")
 		child.hide()
 		child.free()
 		i += 1

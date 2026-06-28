@@ -13,3 +13,10 @@ script = ExtResource("1_4pbkg")
 [node name="ZeppelinMap" type="Node2D" parent="." unique_id=849189712]
 position = Vector2(1561, 31)
 script = ExtResource("1_4pbkg")
+
+[node name="FadeoutPolygon" type="ColorRect" parent="." unique_id=2107557677]
+offset_left = -11.0
+offset_top = -14.0
+offset_right = 1934.0
+offset_bottom = 1099.0
+color = Color(0, 0, 0, 1)

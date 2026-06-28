@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://bd18iu717yalx"]
+
+[ext_resource type="Texture2D" uid="uid://2a1fhllrud13" path="res://assets/UI/In-Game/pngs/IMG_0421.PNG" id="1_cqkv6"]
+[ext_resource type="Texture2D" uid="uid://nv3xv2rldhnv" path="res://assets/UI/In-Game/pngs/IMG_0422.PNG" id="2_bneo2"]
+[ext_resource type="Texture2D" uid="uid://dxw3pq67el161" path="res://assets/UI/In-Game/pngs/IMG_0435.PNG" id="3_s4byb"]
+[ext_resource type="Texture2D" uid="uid://dnruykqnch2g5" path="res://assets/UI/In-Game/pngs/IMG_0423.PNG" id="4_61q7v"]
+[ext_resource type="Texture2D" uid="uid://28gk0is6t6nb" path="res://assets/UI/In-Game/pngs/IMG_0424.PNG" id="5_6xywq"]
+[ext_resource type="Texture2D" uid="uid://dcbss00ogs42a" path="res://assets/UI/In-Game/pngs/IMG_0425.PNG" id="6_21bjh"]
+[ext_resource type="Texture2D" uid="uid://d1lrauj77xp71" path="res://assets/UI/In-Game/pngs/IMG_0426.PNG" id="7_qm0sn"]
+[ext_resource type="Texture2D" uid="uid://ban2ccktyh6sv" path="res://assets/UI/In-Game/pngs/IMG_0427.PNG" id="8_02ebf"]
+[ext_resource type="Texture2D" uid="uid://b1tctrmmmwsl" path="res://assets/UI/In-Game/pngs/IMG_0428.PNG" id="9_8yqg6"]
+[ext_resource type="Texture2D" uid="uid://df64vqtpl8fkf" path="res://assets/UI/In-Game/pngs/IMG_0429.PNG" id="10_q4lva"]
+[ext_resource type="Texture2D" uid="uid://couh1p1lh7dbh" path="res://assets/UI/In-Game/pngs/IMG_0430.PNG" id="11_xf1ht"]
+[ext_resource type="Texture2D" uid="uid://rfd4xlvm8fwv" path="res://assets/UI/In-Game/pngs/IMG_0431.PNG" id="12_hjtjs"]
+[ext_resource type="Texture2D" uid="uid://cgikl2fm3dro4" path="res://assets/UI/In-Game/pngs/IMG_0432.PNG" id="13_v1v6r"]
+[ext_resource type="Texture2D" uid="uid://bqinq7036jg2h" path="res://assets/UI/In-Game/pngs/IMG_0433.PNG" id="14_ktyhe"]
+[ext_resource type="Texture2D" uid="uid://byctdpue3n03r" path="res://assets/UI/In-Game/pngs/IMG_0434.PNG" id="15_dforc"]
+[ext_resource type="Texture2D" uid="uid://bpw2xrgtduvgm" path="res://assets/UI/In-Game/pngs/IMG_0436.PNG" id="16_mtlwb"]
+[ext_resource type="Texture2D" uid="uid://bi4vey5qvind3" path="res://assets/UI/In-Game/pngs/IMG_0437.PNG" id="17_cqiiw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qrc0i"]
+load_path = "res://.godot/imported/IMG_0402.PNG-aa1ade642368814d907ea3b2d01970c6.ctex"
+
+[node name="Node2D" type="Node2D" unique_id=59401090]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=216305202]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=60478665]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1401946698]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("CompressedTexture2D_qrc0i")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=1382295220]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("1_cqkv6")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer" unique_id=2040924495]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("2_bneo2")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer" unique_id=853863313]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_s4byb")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=581262618]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_61q7v")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=2077897529]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("5_6xywq")
+
+[node name="TextureRect6" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=1387464144]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("6_21bjh")
+
+[node name="TextureRect7" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=510740544]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("7_qm0sn")
+
+[node name="TextureRect8" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=1653104701]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("8_02ebf")
+
+[node name="TextureRect9" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=190333694]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("9_8yqg6")
+
+[node name="TextureRect10" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=806387673]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("10_q4lva")
+
+[node name="TextureRect11" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=1047392946]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("11_xf1ht")
+
+[node name="TextureRect12" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=989957405]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("12_hjtjs")
+
+[node name="TextureRect13" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=293427025]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("13_v1v6r")
+
+[node name="TextureRect14" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=298384753]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("14_ktyhe")
+
+[node name="TextureRect15" type="TextureRect" parent="CanvasLayer/TextureRect4" unique_id=880575061]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("15_dforc")
+
+[node name="TextureRect8" type="TextureRect" parent="CanvasLayer" unique_id=369625608]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("16_mtlwb")
+
+[node name="TextureRect9" type="TextureRect" parent="CanvasLayer" unique_id=2044164350]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("17_cqiiw")

@@ -4,7 +4,3 @@
 
 [node name="DialogMaster" type="Node2D" unique_id=1148411461]
 script = ExtResource("1_gjkys")
-
-[node name="Background" type="Sprite2D" parent="." unique_id=1010384090]
-z_index = -10
-position = Vector2(960, 540)

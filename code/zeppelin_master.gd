@@ -1,17 +1,22 @@
 extends Node2D
 
-var currently_fading_out = false
-var currently_fading_in = false
-var current_scene_trans_id = 0
-var current_scene_trans_child = null
-var total_fadeout_time = 0.8
-var fadeout_alpha_steps_in_a_second = 2 / total_fadeout_time	#1 over half of the total fadeout time
+var current_scene = 0
 var background_images = {}
 
-var current_scene = 0
+var currently_fading_out = false
+var currently_fading_in = false
+var total_fadeout_time = 0.8
+var fadeout_alpha_steps_in_a_second = 2 / total_fadeout_time	#1 over half of the total fadeout time
+var current_fadeout_function = ""
+var current_scene_trans_id = 0
+var current_scene_trans_child = null
+
+func change_fadeout_time(val):
+	total_fadeout_time = val
+	fadeout_alpha_steps_in_a_second = 2 / val
+
 
 func _ready():
-	
 	
 	$FadeoutPolygon.self_modulate.a = 0
 	$FadeoutPolygon.visible = false
@@ -24,7 +29,8 @@ func _ready():
 		var local_bg_texture = load("assets/backgrounds/"+bg_file)
 		background_images[int(bg_file.split(".",false)[0])] = local_bg_texture
 	
-	change_scene($RoomViewRoot,0)
+	#change_scene($RoomViewRoot,0)
+	initiate_scene_set(0,$RoomViewRoot,"DoorTransition")
 	
 	
 func _start_FadeIn():
@@ -32,7 +38,18 @@ func _start_FadeIn():
 	currently_fading_out = false
 	currently_fading_in = true
 	
-	change_scene(current_scene_trans_child,current_scene_trans_id)
+	match current_fadeout_function:
+		"DoorTransition":
+			change_scene(current_scene_trans_child,current_scene_trans_id)
+		"Dialogue":
+			$RoomViewRoot.visible = false
+			for child in $RoomViewRoot.get_children():
+				child.visible = false
+			$ZeppelinMap.visible = false
+			for child in $ZeppelinMap.get_children():
+				child.visible = false
+			$DialogueMaster.InitializeDialog(current_scene_trans_id)
+			
 	
 	
 func _stop_Fadestuff():
@@ -41,11 +58,12 @@ func _stop_Fadestuff():
 	$FadeoutPolygon.self_modulate.a = 0
 	$FadeoutPolygon.visible = false
 	
-func initiate_scene_set(id,child):
+func initiate_scene_set(id,child,scene_type):
 	currently_fading_in = false
 	currently_fading_out = true
 	current_scene_trans_id = id
 	current_scene_trans_child = child
+	current_fadeout_function = scene_type
 	
 	$FadeoutPolygon.visible = true
 	
@@ -65,6 +83,9 @@ func change_scene(child,id):
 		$Background.texture = background_images[id]
 	
 func _process(dt):
+	print("test", self)
+	print("RVR CC: ",$RoomViewRoot.get_child_count())
+	print("current_scene", current_scene)
 	if currently_fading_out:
 		$FadeoutPolygon.self_modulate.a += fadeout_alpha_steps_in_a_second * dt
 		if $FadeoutPolygon.self_modulate.a >= 1:

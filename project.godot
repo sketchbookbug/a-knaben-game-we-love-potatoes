@@ -15,11 +15,6 @@ run/main_scene="uid://bntl0s8gu5qbc"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-DialogueDataCarrier="*uid://c7lk8uoq8ynj4"
-ZeppelinRoomScene="*uid://bntl0s8gu5qbc"
-
 [display]
 
 window/size/viewport_width=1920

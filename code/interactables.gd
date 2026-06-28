@@ -2,8 +2,13 @@ extends Node2D
 
 func set_scene(scene_id=0):
 	
+	var i = 0
 	for child in get_children():
-		self.remove_child(child)
+		print(child,"child nr. ",i+1," go brr")
+		child.hide()
+		child.free()
+		i += 1
+		
 		
 	var interactable_data_file = FileAccess.open("zeppelin_interactables_data/" + str(scene_id) + ".txt",FileAccess.READ)
 	var interactable_data = interactable_data_file.get_as_text()
@@ -50,9 +55,9 @@ func button_pressed(cb):
 		0:	#interactable (clue, ...)
 			pass
 		1:	#dialogue
-			get_tree().change_scene_to_file("res://sceners/dialog_master.tscn")
+			get_parent().initiate_scene_set(send_id,self,"Dialogue")
 		2:	#scene changer (door, ...)
-			get_parent().initiate_scene_set(send_id,self)
+			get_parent().initiate_scene_set(send_id,self,"DoorTransition")
 
 func _ready():
 	#set_scene(0)

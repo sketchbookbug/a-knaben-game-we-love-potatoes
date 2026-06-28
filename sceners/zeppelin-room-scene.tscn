@@ -1,10 +1,15 @@
 [gd_scene format=3 uid="uid://bntl0s8gu5qbc"]
 
 [ext_resource type="Script" uid="uid://c7lk8uoq8ynj4" path="res://code/interactables.gd" id="1_4pbkg"]
-[ext_resource type="Script" uid="uid://cbaahdnse0oui" path="res://sceners/zeppelin_master.gd" id="1_m287k"]
+[ext_resource type="Script" uid="uid://cbaahdnse0oui" path="res://code/zeppelin_master.gd" id="1_m287k"]
 
 [node name="ZeppelinMasterCoordinator" type="Node2D" unique_id=817047071]
 script = ExtResource("1_m287k")
 
-[node name="IsometricRoomRoot" type="Node2D" parent="." unique_id=161144894]
+[node name="RoomViewRoot" type="Node2D" parent="." unique_id=161144894]
+position = Vector2(50, 50)
+script = ExtResource("1_4pbkg")
+
+[node name="ZeppelinMap" type="Node2D" parent="." unique_id=849189712]
+position = Vector2(1561, 31)
 script = ExtResource("1_4pbkg")

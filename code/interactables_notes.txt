@@ -5,6 +5,19 @@ create types:
 
 scene ids:
 	0 = corridor
+	1 = cabin 1 (1st on upper row) - Victim
+	2 = cabin 2 (2nd on upper row) - Aristocrat
+	3 = cabin 3 (3rd on upper row) - Artist/Alchemist
+	4 = cabin 4 (4th on upper row) - Cleric
+	5 = cabin 5 (1st on lower row) - Detective
+	6 = cabin 6 (2nd on lower row) - Captain
+	7 = cabin 7 (3rd on lower row) - Chef
+	8 = kitchen (4th on lower row)
+	9 = lounge
+	10 = flight deck
+	11 = storage rooms
+	
+	1000 + x = scene_ids[x] for zeppelin map
 	
 format for interactables:
 	create_type,send_id,centerx,centery,sizex,sizey

@@ -1,0 +1,3 @@
+#storage room
+#corridor
+2,1000,0,0

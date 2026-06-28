@@ -1,2 +1,15 @@
-2,1,0,0,20,20
-2,2,50,0,20,20
+#corridor
+#
+#connection to storage rooms
+2,11,0,0
+#connection to different cabins + kitchen
+2,1,0,60
+2,2,0,120
+2,3,0,180
+2,4,0,240
+2,5,0,300
+2,6,0,360
+2,7,0,420
+2,8,0,480
+#connection to lounge
+2,9,0,540

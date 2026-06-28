@@ -8,10 +8,10 @@ func set_scene(scene_id=0):
 	var interactable_data_file = FileAccess.open("zeppelin_interactables_data/" + str(scene_id) + ".txt",FileAccess.READ)
 	var interactable_data = interactable_data_file.get_as_text()
 	
-	var dialogue_data_file = FileAccess.open("zeppelin_dialogue_data/" + str(scene_id) + ".txt",FileAccess.READ)
-	var dialogue_data = dialogue_data_file.get_as_text()
-	
 	for interactable_dataset in interactable_data.split("\n",false):
+		if "#" in interactable_dataset:
+			continue	#commentary line
+			
 		var splitted = interactable_dataset.split(",",false)
 		
 		if len(splitted) == 4:
@@ -26,6 +26,7 @@ func set_scene(scene_id=0):
 		var pos = Vector2(int(splitted[2]),int(splitted[3]))
 		var size = Vector2(int(splitted[4]),int(splitted[5]))
 		create_interactable(int(splitted[0]),int(splitted[1]),pos,size)
+	
 
 func create_interactable(create_type=0,send_id=0,button_position=Vector2(0,0),button_size=Vector2(50,50)):
 	var current_button = Button.new()
@@ -49,8 +50,7 @@ func button_pressed(cb):
 		1:	#dialogue
 			pass
 		2:	#scene changer (door, ...)
-			#play some noise or smth
-			set_scene(send_id)
+			get_parent().initiate_scene_set(send_id,self)
 
 func _ready():
 	#set_scene(0)

@@ -1,0 +1,7 @@
+#kitchen
+#corridor
+2,1000,0,0
+#chef's cabin
+2,1007,0,60
+#lounge
+2,1009,0,120

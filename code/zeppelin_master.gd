@@ -8,20 +8,13 @@ var total_fadeout_time = 0.8
 var fadeout_alpha_steps_in_a_second = 2 / total_fadeout_time	#1 over half of the total fadeout time
 var background_images = {}
 
-func _ready():
+var current_scene = 0
 
+func _ready():
+	
+	
 	$FadeoutPolygon.self_modulate.a = 0
 	$FadeoutPolygon.visible = false
-	
-#	var background_dir = DirAccess.open("assets/backgrounds")
-#	var background_file_name = background_dir.get_next()
-#	print(background_file_name,"?")
-#	while background_file_name != "":
-#			
-#		print(background_file_name)
-#		background_images[background_file_name] = null
-#		
-#		background_file_name = background_dir.get_next()
 
 	var background_files = DirAccess.get_files_at("assets/backgrounds")
 	for bg_file in background_files:
@@ -32,9 +25,6 @@ func _ready():
 		background_images[int(bg_file.split(".",false)[0])] = local_bg_texture
 	
 	change_scene($RoomViewRoot,0)
-
-	
-	
 	
 	
 func _start_FadeIn():
@@ -62,9 +52,11 @@ func initiate_scene_set(id,child):
 func change_scene(child,id):
 	if child == $RoomViewRoot:
 		$ZeppelinMap.set_scene(1000+id)
+		current_scene = id
 		child.set_scene(id)
 	elif child == $ZeppelinMap:
 		$RoomViewRoot.set_scene(id-1000)
+		current_scene = id - 1000
 		child.set_scene(id)
 		
 	#change background

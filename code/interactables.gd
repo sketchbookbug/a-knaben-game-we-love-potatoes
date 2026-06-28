@@ -50,7 +50,7 @@ func button_pressed(cb):
 		0:	#interactable (clue, ...)
 			pass
 		1:	#dialogue
-			pass
+			get_tree().change_scene_to_file("res://sceners/dialog_master.tscn")
 		2:	#scene changer (door, ...)
 			get_parent().initiate_scene_set(send_id,self)
 

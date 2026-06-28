@@ -13,3 +13,5 @@
 2,8,0,480
 #connection to lounge
 2,9,0,540
+#test dialog
+1,69,0,600

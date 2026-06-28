@@ -21,3 +21,6 @@ scene ids:
 	
 format for interactables:
 	create_type,send_id,centerx,centery,sizex,sizey
+	
+dialog ids:
+	0 = test dialog

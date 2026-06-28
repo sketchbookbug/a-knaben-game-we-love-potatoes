@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c7lk8uoq8ynj4" path="res://code/interactables.gd" id="1_4pbkg"]
 [ext_resource type="Script" uid="uid://cbaahdnse0oui" path="res://code/zeppelin_master.gd" id="1_m287k"]
-[ext_resource type="PackedScene" uid="uid://qfwlj3d4pewy" path="res://sceners/dialog_master.tscn" id="3_vetn3"]
 
 [node name="ZeppelinMasterCoordinator" type="Node2D" unique_id=817047071]
 script = ExtResource("1_m287k")
@@ -26,5 +25,3 @@ color = Color(0, 0, 0, 1)
 [node name="Background" type="Sprite2D" parent="." unique_id=730203399]
 z_index = -10
 position = Vector2(960, 540)
-
-[node name="DialogMaster" parent="." unique_id=1148411461 instance=ExtResource("3_vetn3")]

@@ -1,0 +1,10 @@
+create types:
+	0 = interactable (clue, ...)
+	1 = dialogue
+	2 = scene changer (door, ...)
+
+scene ids:
+	0 = corridor
+	
+format for interactables:
+	create_type,send_id,centerx,centery,sizex,sizey

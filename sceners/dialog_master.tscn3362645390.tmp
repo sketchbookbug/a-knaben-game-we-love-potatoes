@@ -8,8 +8,5 @@ script = ExtResource("1_gjkys")
 [node name="MainText" type="Label" parent="." unique_id=137691955]
 offset_left = 34.0
 offset_top = 670.0
-offset_right = 1249.0
+offset_right = 1151.0
 offset_bottom = 1044.0
-
-[node name="TalkyGuyImage" type="Sprite2D" parent="." unique_id=1102124711]
-position = Vector2(554, 440)

@@ -2,9 +2,13 @@ extends Node2D
 
 var current_dialog_id = 0
 var current_talky_guy = ""
-var current_dialog_point = 0
+
 var allcharimages = {}
 var dialogue_image_queue = []
+
+var dialogue_parts = []
+var ending_options = {}
+
 
 func InitializeDialog(dialog_id):
 	current_dialog_id = dialog_id
@@ -13,17 +17,20 @@ func InitializeDialog(dialog_id):
 	var dialogue_data_file = FileAccess.open("dialogue_data/" + str(dialog_id) + ".txt",FileAccess.READ)
 	var dialogue_data = dialogue_data_file.get_as_text()
 	var dialogue_data_lines = dialogue_data.split("\n",false)
-	
-	var dialogue_parts = []
-	var dialogue_image_name_queue = []
-	var ending_options = {}
+
 	var currently_looking_at_ending_options = false
+	
+	dialogue_parts = []
+	ending_options = {}
 	
 	var line_index = 0
 	
+	#print(dialogue_data_lines)
+	
 	for l in dialogue_data_lines:
+		
+		#print("\n","we are charlie ",l)
 		if l.replace(" ","")[0] == "#":		#comment line
-			dialogue_data_lines.remove_at(line_index)
 			continue
 			
 		elif line_index == 0:	#data for who we are talking to
@@ -33,27 +40,82 @@ func InitializeDialog(dialog_id):
 			var splitted = l.split(";",false)
 			ending_options[splitted[1]] = int(splitted[0])
 			
+		elif "[ENDCONVO]" in l:	#now seeing ending options
+			currently_looking_at_ending_options = true
+			continue
+			
 		else:
-			if "[ENDCONVO]" in l:	#now seeing ending options
-				currently_looking_at_ending_options = true
-				continue
-				
+			#print("we have arrived here, my friend <", l)
 			var splitted = l.split(";",false)
-			dialogue_image_name_queue.push_back(current_talky_guy + "_" + splitted[0])	#the expression of the talky guy so we can later get the image of them
+			dialogue_image_queue.push_back(current_talky_guy + "_" + splitted[0])	#the expression of the talky guy so we can later get the image of them
 			dialogue_parts.push_back(splitted[1].replace("/n","\n"))
 			
 		line_index += 1
-	
-	#prepare dialogue images
-	dialogue_image_queue.clear()
-	for dialogue_image_name in dialogue_image_name_queue:
-		if dialogue_image_name in allcharimages.keys():
-			dialogue_image_queue.push_back(allcharimages[dialogue_image_name])
-		else:
-			dialogue_image_queue.push_back(allcharimages["1_1"])
 		
-	$DialogueTextManager.load_text(dialogue_parts)
+	#print(dialogue_parts)
+	NextDialogPoint()
 	
+	
+
+func NextDialogPoint():
+	if len(dialogue_parts) == 0:	#failsave
+		print("failsaved because there were no more dialogue parts")
+		return
+		
+	#prepare text
+	var next_text = dialogue_parts[0]
+	dialogue_parts.remove_at(0)
+	
+	#enforce text
+	$MainText.text = next_text
+	
+	#prepare image
+	var next_image_name = dialogue_image_queue[0]
+	dialogue_image_queue.remove_at(0)
+	
+	var next_image = allcharimages["1_1"]
+	if next_image_name in allcharimages.keys():
+		next_image = allcharimages[next_image_name]
+		
+	#enforce image
+	$TalkyGuyImage.texture = next_image
+		
+	#check if its the end
+	if len(dialogue_parts) == 0:
+		DisplayEndingOptions()
+	
+	
+	
+func DisplayEndingOptions():
+	var buttonindex = 0
+	for ending_name in ending_options.keys():
+		var ending_sender = ending_options[ending_name]
+		
+		var current_button = Button.new()
+		current_button.set_meta("ending_sender",ending_sender)
+		current_button.set_size(Vector2(200,50))
+		current_button.z_as_relative = false
+		current_button.z_index = 99
+		current_button.text = ending_name
+		current_button.set_position(Vector2(50,360-60*buttonindex))
+		var lambda = func local_lambda(): SendOnButtonPress(current_button)
+		current_button.pressed.connect(lambda)
+		add_child(current_button)
+		buttonindex += 1
+		
+func SendOnButtonPress(pressed_button):
+	var ending_sender = pressed_button.get_meta("ending_sender")
+	if ending_sender == 0:
+		#end dialogue existence and get back to normal view
+		self.hide()
+		self.get_parent().StartExistingAfterDialogue()
+	else:
+		InitializeDialog(ending_sender)
+		for child in self.get_children():
+			if child is Button:
+				child.hide()
+				remove_child(child)
+				#child.free()
 
 
 func _ready():
@@ -69,4 +131,6 @@ func _ready():
 		
 	
 func _process(dt):
-	pass
+	if self.visible:
+		if Input.is_action_just_pressed("ForwardDialogue"):
+			NextDialogPoint()

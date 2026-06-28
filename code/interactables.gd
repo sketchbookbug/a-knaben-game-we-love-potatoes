@@ -34,9 +34,9 @@ func create_interactable(create_type=0,send_id=0,button_position=Vector2(0,0),bu
 	current_button.set_meta("send_id",send_id)
 	current_button.set_position(button_position)
 	current_button.set_size(button_size)
-	current_button.self_modulate.a = 0+0.1
+	current_button.self_modulate.a = 0.2
 	current_button.z_as_relative = false
-	current_button.z_index = -1
+	current_button.z_index = 99
 	var lambda = func local_lambda(): button_pressed(current_button)
 	current_button.pressed.connect(lambda)
 	add_child(current_button)

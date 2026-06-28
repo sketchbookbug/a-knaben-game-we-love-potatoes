@@ -16,12 +16,11 @@ script = ExtResource("1_4pbkg")
 
 [node name="FadeoutPolygon" type="ColorRect" parent="." unique_id=2107557677]
 self_modulate = Color(1, 1, 1, 0)
-offset_left = -884.0
-offset_top = -804.0
-offset_right = 2668.0
-offset_bottom = 1910.0
+offset_left = -11.0
+offset_top = -14.0
+offset_right = 1934.0
+offset_bottom = 1099.0
 color = Color(0, 0, 0, 1)
 
 [node name="Background" type="Sprite2D" parent="." unique_id=730203399]
 z_index = -10
-position = Vector2(960, 540)

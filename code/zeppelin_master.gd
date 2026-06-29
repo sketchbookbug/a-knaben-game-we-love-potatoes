@@ -38,6 +38,7 @@ func _ready():
 	#change_scene($RoomViewRoot,0)
 	#$DialogueMaster.hide()
 	initiate_scene_set(0,$RoomViewRoot,"DoorTransition")
+	_start_FadeIn()
 	
 	
 func _start_FadeIn():

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Pixel Forge Jam #2"
-run/main_scene="uid://bntl0s8gu5qbc"
+run/main_scene="uid://b2taylk3chyb1"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 

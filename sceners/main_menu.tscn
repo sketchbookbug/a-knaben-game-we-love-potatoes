@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b2taylk3chyb1"]
+
+[ext_resource type="Script" uid="uid://khwujnyqdwjt" path="res://sceners/play_button.gd" id="1_q5mv8"]
+
+[node name="MainMenu" type="Node2D" unique_id=1953608116]
+
+[node name="TitleCardTemp" type="Label" parent="." unique_id=1138297088]
+offset_left = 610.0
+offset_top = 37.0
+offset_right = 1210.0
+offset_bottom = 293.0
+text = "SUPER COOL FANCY GAME NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="." unique_id=468340724]
+offset_left = 852.0
+offset_top = 526.0
+offset_right = 966.0
+offset_bottom = 592.0
+text = "PLAY"
+script = ExtResource("1_q5mv8")
+
+[node name="QuitButton" type="Button" parent="." unique_id=627845407]
+offset_left = 850.0
+offset_top = 625.0
+offset_right = 964.0
+offset_bottom = 691.0
+text = "QUIT"
+script = ExtResource("1_q5mv8")
+
+[node name="Label" type="Label" parent="." unique_id=10500216]
+offset_left = 1571.0
+offset_top = 998.0
+offset_right = 1924.0
+offset_bottom = 1077.0
+text = "by sketchbookbug x Palerus7
+Made for the 2nd Pixel Forge game jam
+Around 07/01/2026"

@@ -77,14 +77,15 @@ func InitializeDialog(dialog_id):
 			
 		line_index += 1
 		
+		
+	$TalkyGuyImage.show()
+		
 	if init_dialogue_id != -1:
 		InitializeDialog(init_dialogue_id)
 		return
 		
 	else:
 		
-		#print(dialogue_parts)
-		$TalkyGuyImage.show()
 		NextDialogPoint()
 			
 	
@@ -149,8 +150,9 @@ func SendOnButtonPress(pressed_button):
 		get_parent().find_child("FadeoutPolygon").visible = true
 	else:
 		#aw sh*t here we go again
-		InitializeDialog(ending_sender)
 		DeleteButtonChildren()
+		InitializeDialog(ending_sender)
+		$TalkyGuyImage.show()
 
 func DeleteButtonChildren():
 	$TalkyGuyImage.hide()

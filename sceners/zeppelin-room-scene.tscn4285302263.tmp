@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c7lk8uoq8ynj4" path="res://code/interactables.gd" id="1_4pbkg"]
 [ext_resource type="Script" uid="uid://cbaahdnse0oui" path="res://code/zeppelin_master.gd" id="1_m287k"]
-[ext_resource type="Texture2D" uid="uid://2a1fhllrud13" path="res://assets/UI/In-Game/pngs/IMG_0421.PNG" id="2_65c1j"]
 [ext_resource type="Texture2D" uid="uid://nv3xv2rldhnv" path="res://assets/UI/In-Game/pngs/IMG_0422.PNG" id="3_c5gxh"]
 [ext_resource type="Texture2D" uid="uid://bpwnu2dabtmyx" path="res://assets/UI/In-Game/pngs/IMG_0438.PNG" id="3_n2ove"]
 [ext_resource type="PackedScene" uid="uid://qfwlj3d4pewy" path="res://sceners/dialog_master.tscn" id="3_vetn3"]
@@ -10,7 +9,6 @@
 [ext_resource type="Script" uid="uid://coskw78c7xw7q" path="res://code/background_cogwheel.gd" id="4_ss33x"]
 [ext_resource type="Texture2D" uid="uid://gec6kieox1xx" path="res://assets/UI/In-Game/pngs/IMG_0439.PNG" id="4_y466e"]
 [ext_resource type="Texture2D" uid="uid://28gk0is6t6nb" path="res://assets/UI/In-Game/pngs/IMG_0424.PNG" id="5_n0jsa"]
-[ext_resource type="Texture2D" uid="uid://bpw2xrgtduvgm" path="res://assets/UI/In-Game/pngs/IMG_0436.PNG" id="6_5s5up"]
 [ext_resource type="Texture2D" uid="uid://dcbss00ogs42a" path="res://assets/UI/In-Game/pngs/IMG_0425.PNG" id="6_n2ove"]
 [ext_resource type="Texture2D" uid="uid://d1lrauj77xp71" path="res://assets/UI/In-Game/pngs/IMG_0426.PNG" id="7_y466e"]
 [ext_resource type="Texture2D" uid="uid://ban2ccktyh6sv" path="res://assets/UI/In-Game/pngs/IMG_0427.PNG" id="8_65c1j"]
@@ -146,18 +144,6 @@ texture = ExtResource("3_n2ove")
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("4_y466e")
-
-[node name="Wood Background" type="TextureRect" parent="." unique_id=930299215]
-z_index = -5
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("2_65c1j")
-
-[node name="Journal" type="TextureRect" parent="." unique_id=1719490287]
-z_index = -5
-offset_right = 1920.0
-offset_bottom = 1080.0
-texture = ExtResource("6_5s5up")
 
 [node name="ZeppelinMap" type="Node2D" parent="." unique_id=849189712]
 z_index = -5

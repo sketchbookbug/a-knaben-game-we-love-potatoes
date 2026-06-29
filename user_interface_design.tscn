@@ -46,10 +46,6 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("2_bneo2")
 
-[node name="Cogwheels" type="Container" parent="CanvasLayer" unique_id=1631424753]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="TextureRect13" type="TextureRect" parent="CanvasLayer" unique_id=226020334]
 offset_left = -234.0
 offset_top = 213.0

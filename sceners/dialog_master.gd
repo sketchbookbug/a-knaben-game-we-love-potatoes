@@ -9,9 +9,12 @@ var dialogue_image_queue = []
 
 var dialogue_parts = []
 var ending_options = {}
+var ending_option_flags = {}
 
 var talky_guy_names_by_id = {}
 var currently_in_dialogue = false
+
+var dialogue_flags = []
 
 
 func InitializeDialog(dialog_id):
@@ -26,8 +29,10 @@ func InitializeDialog(dialog_id):
 	
 	dialogue_parts = []
 	ending_options = {}
+	ending_option_flags = {}
 	
 	var line_index = 0
+	var init_dialogue_id = -1
 	
 	#print(dialogue_data_lines)
 	
@@ -38,11 +43,27 @@ func InitializeDialog(dialog_id):
 			continue
 			
 		elif line_index == 0:	#data for who we are talking to
-			current_talky_guy = l
+			
+			if l.replace(" ","")[0] == "F":		#flag redirector
+				
+				var splitted = l.replace("/n","\n").lstrip("F").split(";",false)
+				if splitted[0] in dialogue_flags:
+					init_dialogue_id = int(splitted[1])
+					break
+				
+				continue
+			
+			else:
+				current_talky_guy = l
+			
 			
 		elif currently_looking_at_ending_options:
 			var splitted = l.split(";",false)
 			ending_options[splitted[1]] = int(splitted[0])
+			if len(splitted) == 3:
+				ending_option_flags[splitted[1]] = splitted[2].split(",",false)
+			else:
+				ending_option_flags[splitted[1]] = []
 			
 		elif "[ENDCONVO]" in l:	#now seeing ending options
 			currently_looking_at_ending_options = true
@@ -56,10 +77,16 @@ func InitializeDialog(dialog_id):
 			
 		line_index += 1
 		
-	#print(dialogue_parts)
-	$TalkyGuyImage.show()
-	NextDialogPoint()
-	
+	if init_dialogue_id != -1:
+		InitializeDialog(init_dialogue_id)
+		return
+		
+	else:
+		
+		#print(dialogue_parts)
+		$TalkyGuyImage.show()
+		NextDialogPoint()
+			
 	
 
 func NextDialogPoint():
@@ -100,6 +127,7 @@ func DisplayEndingOptions():
 		
 		var current_button = Button.new()
 		current_button.set_meta("ending_sender",ending_sender)
+		current_button.set_meta("ending_flags",ending_option_flags[ending_name])
 		current_button.set_size(Vector2(200,30))
 		current_button.z_as_relative = false
 		current_button.z_index = 99
@@ -112,6 +140,8 @@ func DisplayEndingOptions():
 		
 func SendOnButtonPress(pressed_button):
 	var ending_sender = pressed_button.get_meta("ending_sender")
+	for flag in pressed_button.get_meta("ending_flags"):
+		dialogue_flags.append(flag)
 	if ending_sender == 0:
 		#end dialogue existence and get back to normal view
 		get_parent().currently_fading_out = true

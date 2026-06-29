@@ -25,8 +25,11 @@ format for interactables:
 dialog ids:
 	0 = end the dialog system; go back to normal stuff
 	69 = test dialog
+	70 = test dialog 2
 	
 format for dialogues:
+	#first all the flag redirectors
+	FIS_GREEN_FLAG;70
 	#talky guy 1 = jar jar binks
 	1
 	#all the lines of dialog
@@ -34,9 +37,9 @@ format for dialogues:
 	1;Michse werden dichse essen und es genießen, jawohl! (:
 	#giving the ending options
 	[ENDCONVO]
-	#next dialogue id;stuff to say in the button
-	70;Erm... what the sigma?
-	0;Welp... im gay now. Bye :3
+	#next dialogue id;stuff to say in the button;All flags to set when selecting this option (seperated by commas)
+	70;Erm... what the sigma?;IS_GREEN_FLAG
+	0;Welp... im gay now. Bye :3;
 	
 talkies:
 	1 = jar jar binks (yes he's necessary)

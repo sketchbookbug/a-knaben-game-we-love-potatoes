@@ -7,8 +7,8 @@ func set_scene(scene_id=0):
 			child.hide()
 			child.free()
 	
-	print("loading scene ", scene_id)
-	var interactable_data_file = FileAccess.open("zeppelin_interactables_data/" + str(scene_id) + ".txt",FileAccess.READ)
+	#print("loading scene ", scene_id)
+	var interactable_data_file = FileAccess.open("zeppelin_data/" + str(scene_id) + ".txt",FileAccess.READ)
 	var interactable_data = interactable_data_file.get_as_text()
 	
 	for interactable_dataset in interactable_data.split("\n",false):

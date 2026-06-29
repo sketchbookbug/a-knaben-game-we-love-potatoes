@@ -2,6 +2,7 @@ extends Node2D
 
 var current_scene = 0
 var background_images = {}
+var room_names = {}
 
 var currently_fading_out = false
 var currently_fading_in = false
@@ -28,9 +29,14 @@ func _ready():
 			
 		var local_bg_texture = load("assets/backgrounds/"+bg_file)
 		background_images[int(bg_file.split(".",false)[0])] = local_bg_texture
+		
+	var room_name_file = FileAccess.open("zeppelin_data/room_ids_to_room_names.txt",FileAccess.READ)
+	for room_name_line in room_name_file.get_as_text().split("\n",false):
+		var splitted = room_name_line.replace("/n","\n").split(";",false)
+		room_names[int(splitted[0])] = splitted[1]
 	
 	#change_scene($RoomViewRoot,0)
-	$DialogueMaster.hide()
+	#$DialogueMaster.hide()
 	initiate_scene_set(0,$RoomViewRoot,"DoorTransition")
 	
 	
@@ -50,8 +56,12 @@ func _start_FadeIn():
 			$DialogueMaster.InitializeDialog(current_scene_trans_id)
 		"DialogueEnd":
 			StartExistingAfterDialogue()
-			$DialogueMaster.hide()
+			#$DialogueMaster.hide()
 			$DialogueMaster.DeleteButtonChildren()
+			$DialogueMaster.currently_in_dialogue = false
+			$DialogueMaster.find_child("NameLabel").text = ""
+			if current_scene in room_names.keys():
+				$DialogueMaster.find_child("NameLabel").text = room_names[current_scene]
 			
 func StartExistingAfterDialogue():
 	$RoomViewRoot.visible = true
@@ -86,8 +96,12 @@ func change_scene(child,id):
 		
 	#change background
 	#print(id,background_images)
-	if id in background_images.keys():
-		$Background.texture = background_images[id]
+	if current_scene in background_images.keys():
+		$Background.texture = background_images[current_scene]
+		
+	if current_scene in room_names.keys():
+		$DialogueMaster.find_child("NameLabel").text = room_names[current_scene]
+		#print("Entering ", room_names[current_scene])
 	
 func _process(dt):
 	if currently_fading_out:

@@ -1,0 +1,12 @@
+0;Main Corridor
+1;THOSE WHO KNOW
+2;Jeffrey's Island
+3;Artist's Studio
+4;Cleric's sanctium
+5;Ah yes the floor here is made of floor
+6;Captain's suite
+7;Chef's cabin
+8;Kitchen
+9;Lounge
+10;Flight deck
+11;Storage room

@@ -11,11 +11,12 @@ var dialogue_parts = []
 var ending_options = {}
 
 var talky_guy_names_by_id = {}
+var currently_in_dialogue = false
 
 
 func InitializeDialog(dialog_id):
 	current_dialog_id = dialog_id
-	self.show()
+	currently_in_dialogue = true
 	
 	var dialogue_data_file = FileAccess.open("dialogue_data/" + str(dialog_id) + ".txt",FileAccess.READ)
 	var dialogue_data = dialogue_data_file.get_as_text()
@@ -56,6 +57,7 @@ func InitializeDialog(dialog_id):
 		line_index += 1
 		
 	#print(dialogue_parts)
+	$TalkyGuyImage.show()
 	NextDialogPoint()
 	
 	
@@ -98,11 +100,11 @@ func DisplayEndingOptions():
 		
 		var current_button = Button.new()
 		current_button.set_meta("ending_sender",ending_sender)
-		current_button.set_size(Vector2(200,50))
+		current_button.set_size(Vector2(200,30))
 		current_button.z_as_relative = false
 		current_button.z_index = 99
 		current_button.text = ending_name
-		current_button.set_position(Vector2(50,360-60*buttonindex))
+		current_button.set_position(Vector2(930,780-40*buttonindex))
 		var lambda = func local_lambda(): SendOnButtonPress(current_button)
 		current_button.pressed.connect(lambda)
 		add_child(current_button)
@@ -121,6 +123,8 @@ func SendOnButtonPress(pressed_button):
 		DeleteButtonChildren()
 
 func DeleteButtonChildren():
+	$TalkyGuyImage.hide()
+	$MainText.text = ""
 	for child in self.get_children():
 		if child is Button:
 			child.hide()
@@ -136,7 +140,7 @@ func _ready():
 			
 		var local_charimg_texture = load("assets/characters/"+charimg_file)
 		allcharimages[charimg_file.split(".",false)[0]] = local_charimg_texture
-		allcharimageypositions[local_charimg_texture] = 690 - int(local_charimg_texture.get_image().get_height() * 0.5)
+		allcharimageypositions[local_charimg_texture] = 800 - int(local_charimg_texture.get_image().get_height() * 0.5)
 		
 	#get the names for the speakers
 	var speaker_name_file = FileAccess.open("dialogue_data/speaker_ids_to_names.txt",FileAccess.READ)

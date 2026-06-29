@@ -6,18 +6,22 @@
 script = ExtResource("1_gjkys")
 
 [node name="MainText" type="Label" parent="." unique_id=137691955]
-offset_left = 34.0
-offset_top = 670.0
-offset_right = 1249.0
-offset_bottom = 1044.0
+offset_left = 250.0
+offset_top = 881.0
+offset_right = 1155.0
+offset_bottom = 979.0
 
 [node name="TalkyGuyImage" type="Sprite2D" parent="." unique_id=1102124711]
-position = Vector2(554, 440)
+position = Vector2(678, 800)
 
 [node name="NameLabel" type="Label" parent="." unique_id=999018285]
-offset_left = 499.99997
-offset_top = 629.0
-offset_right = 540.0
-offset_bottom = 652.0
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 563.0
+offset_top = 806.0
+offset_right = 805.01697
+offset_bottom = 853.8568
 scale = Vector2(0.9792701, 1.023888)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 uppercase = true

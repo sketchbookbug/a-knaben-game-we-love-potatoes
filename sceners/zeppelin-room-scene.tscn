@@ -164,13 +164,6 @@ z_index = -5
 position = Vector2(1550, 40)
 script = ExtResource("1_4pbkg")
 
-[node name="Zeppelin Map Metal" type="TextureRect" parent="ZeppelinMap" unique_id=553034897]
-offset_left = -59.0
-offset_top = -31.0
-offset_right = 361.0
-offset_bottom = 1049.0
-texture = SubResource("CompressedTexture2D_0bv50")
-
 [node name="Zeppelin Map Rooms" type="Container" parent="ZeppelinMap" unique_id=1905127977]
 offset_left = -1560.0
 offset_top = -32.0
@@ -224,6 +217,13 @@ texture = ExtResource("14_45kqk")
 [node name="TextureRect15" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=1229712055]
 layout_mode = 2
 texture = ExtResource("15_2b8nx")
+
+[node name="Zeppelin Map Metal" type="TextureRect" parent="ZeppelinMap" unique_id=553034897]
+offset_left = -59.0
+offset_top = -31.0
+offset_right = 361.0
+offset_bottom = 1049.0
+texture = SubResource("CompressedTexture2D_0bv50")
 
 [node name="RoomViewRoot" type="Node2D" parent="." unique_id=161144894]
 position = Vector2(54, 50)

@@ -24,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://gec6kieox1xx" path="res://assets/UI/In-Game/pngs/IMG_0439.PNG" id="19_61q7v"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qrc0i"]
-load_path = "res://.godot/imported/IMG_0402.PNG-aa1ade642368814d907ea3b2d01970c6.ctex"
 
 [node name="Node2D" type="Node2D" unique_id=59401090]
 
@@ -176,6 +175,7 @@ layout_mode = 2
 texture = ExtResource("15_dforc")
 
 [node name="Zeppelin Map Metal" type="TextureRect" parent="CanvasLayer" unique_id=853863313]
+offset_left = 1500.0
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("3_s4byb")

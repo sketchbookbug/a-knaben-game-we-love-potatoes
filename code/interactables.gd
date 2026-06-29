@@ -6,7 +6,8 @@ func set_scene(scene_id=0):
 		if child is Button:
 			child.hide()
 			child.free()
-
+	
+	print("loading scene ", scene_id)
 	var interactable_data_file = FileAccess.open("zeppelin_interactables_data/" + str(scene_id) + ".txt",FileAccess.READ)
 	var interactable_data = interactable_data_file.get_as_text()
 	
@@ -36,7 +37,10 @@ func create_interactable(create_type=0,send_id=0,button_position=Vector2(0,0),bu
 	current_button.set_meta("send_id",send_id)
 	current_button.set_position(button_position)
 	current_button.set_size(button_size)
-	current_button.self_modulate.a = 0.2
+	if name == "ZeppelinMap":
+		current_button.self_modulate.a = 0
+	else:
+		current_button.self_modulate.a = 1
 	current_button.z_as_relative = false
 	current_button.z_index = 99
 	var lambda = func local_lambda(): button_pressed(current_button)

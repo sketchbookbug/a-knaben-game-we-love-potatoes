@@ -89,7 +89,7 @@ layout_mode = 2
 texture = ExtResource("15_2b8nx")
 
 [node name="RoomViewRoot" type="Node2D" parent="." unique_id=161144894]
-position = Vector2(50, 50)
+position = Vector2(54, 50)
 script = ExtResource("1_4pbkg")
 
 [node name="FadeoutPolygon" type="ColorRect" parent="." unique_id=2107557677]

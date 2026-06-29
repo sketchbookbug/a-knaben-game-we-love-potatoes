@@ -3,16 +3,93 @@
 [ext_resource type="Script" uid="uid://c7lk8uoq8ynj4" path="res://code/interactables.gd" id="1_4pbkg"]
 [ext_resource type="Script" uid="uid://cbaahdnse0oui" path="res://code/zeppelin_master.gd" id="1_m287k"]
 [ext_resource type="PackedScene" uid="uid://qfwlj3d4pewy" path="res://sceners/dialog_master.tscn" id="3_vetn3"]
+[ext_resource type="Texture2D" uid="uid://dnruykqnch2g5" path="res://assets/UI/In-Game/pngs/IMG_0423.PNG" id="4_8xier"]
+[ext_resource type="Texture2D" uid="uid://28gk0is6t6nb" path="res://assets/UI/In-Game/pngs/IMG_0424.PNG" id="5_n0jsa"]
+[ext_resource type="Texture2D" uid="uid://dcbss00ogs42a" path="res://assets/UI/In-Game/pngs/IMG_0425.PNG" id="6_n2ove"]
+[ext_resource type="Texture2D" uid="uid://d1lrauj77xp71" path="res://assets/UI/In-Game/pngs/IMG_0426.PNG" id="7_y466e"]
+[ext_resource type="Texture2D" uid="uid://ban2ccktyh6sv" path="res://assets/UI/In-Game/pngs/IMG_0427.PNG" id="8_65c1j"]
+[ext_resource type="Texture2D" uid="uid://b1tctrmmmwsl" path="res://assets/UI/In-Game/pngs/IMG_0428.PNG" id="9_c5gxh"]
+[ext_resource type="Texture2D" uid="uid://df64vqtpl8fkf" path="res://assets/UI/In-Game/pngs/IMG_0429.PNG" id="10_0qdyj"]
+[ext_resource type="Texture2D" uid="uid://couh1p1lh7dbh" path="res://assets/UI/In-Game/pngs/IMG_0430.PNG" id="11_ss33x"]
+[ext_resource type="Texture2D" uid="uid://rfd4xlvm8fwv" path="res://assets/UI/In-Game/pngs/IMG_0431.PNG" id="12_quex2"]
+[ext_resource type="Texture2D" uid="uid://cgikl2fm3dro4" path="res://assets/UI/In-Game/pngs/IMG_0432.PNG" id="13_5s5up"]
+[ext_resource type="Texture2D" uid="uid://bqinq7036jg2h" path="res://assets/UI/In-Game/pngs/IMG_0433.PNG" id="14_45kqk"]
+[ext_resource type="Texture2D" uid="uid://byctdpue3n03r" path="res://assets/UI/In-Game/pngs/IMG_0434.PNG" id="15_2b8nx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0bv50"]
+load_path = "res://.godot/imported/IMG_0435.PNG-4315e8af79e25dd44356bc9125952ccc.ctex"
 
 [node name="ZeppelinMasterCoordinator" type="Node2D" unique_id=817047071]
 script = ExtResource("1_m287k")
 
-[node name="RoomViewRoot" type="Node2D" parent="." unique_id=161144894]
-position = Vector2(50, 50)
+[node name="ZeppelinMap" type="Node2D" parent="." unique_id=849189712]
+z_index = -5
+position = Vector2(1550, 40)
 script = ExtResource("1_4pbkg")
 
-[node name="ZeppelinMap" type="Node2D" parent="." unique_id=849189712]
-position = Vector2(1561, 31)
+[node name="Zeppelin Map Metal" type="TextureRect" parent="ZeppelinMap" unique_id=553034897]
+offset_left = -59.0
+offset_top = -31.0
+offset_right = 361.0
+offset_bottom = 1049.0
+texture = SubResource("CompressedTexture2D_0bv50")
+
+[node name="Zeppelin Map Rooms" type="Container" parent="ZeppelinMap" unique_id=1905127977]
+offset_left = -1560.0
+offset_top = -32.0
+offset_right = -1520.0
+offset_bottom = 8.0
+
+[node name="TextureRect4" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=2000504283]
+layout_mode = 2
+texture = ExtResource("4_8xier")
+
+[node name="TextureRect5" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=45695344]
+layout_mode = 2
+texture = ExtResource("5_n0jsa")
+
+[node name="TextureRect6" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=1606032454]
+layout_mode = 2
+texture = ExtResource("6_n2ove")
+
+[node name="TextureRect7" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=1975922906]
+layout_mode = 2
+texture = ExtResource("7_y466e")
+
+[node name="TextureRect8" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=519848138]
+layout_mode = 2
+texture = ExtResource("8_65c1j")
+
+[node name="TextureRect9" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=383480641]
+layout_mode = 2
+texture = ExtResource("9_c5gxh")
+
+[node name="TextureRect10" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=113904459]
+layout_mode = 2
+texture = ExtResource("10_0qdyj")
+
+[node name="TextureRect11" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=1298418025]
+layout_mode = 2
+texture = ExtResource("11_ss33x")
+
+[node name="TextureRect12" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=2071505839]
+layout_mode = 2
+texture = ExtResource("12_quex2")
+
+[node name="TextureRect13" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=198831015]
+layout_mode = 2
+texture = ExtResource("13_5s5up")
+
+[node name="TextureRect14" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=1440416370]
+layout_mode = 2
+texture = ExtResource("14_45kqk")
+
+[node name="TextureRect15" type="TextureRect" parent="ZeppelinMap/Zeppelin Map Rooms" unique_id=1229712055]
+layout_mode = 2
+texture = ExtResource("15_2b8nx")
+
+[node name="RoomViewRoot" type="Node2D" parent="." unique_id=161144894]
+position = Vector2(50, 50)
 script = ExtResource("1_4pbkg")
 
 [node name="FadeoutPolygon" type="ColorRect" parent="." unique_id=2107557677]

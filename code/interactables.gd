@@ -1,14 +1,12 @@
 extends Node2D
 
 func set_scene(scene_id=0):
-	
-	var i = 0
 	for child in get_children():
-		child.hide()
-		child.free()
-		i += 1
-		
-		
+		#if child is not TextureRect and child is not Container:
+		if child is Button:
+			child.hide()
+			child.free()
+
 	var interactable_data_file = FileAccess.open("zeppelin_interactables_data/" + str(scene_id) + ".txt",FileAccess.READ)
 	var interactable_data = interactable_data_file.get_as_text()
 	
@@ -63,4 +61,4 @@ func _ready():
 	pass
 	
 func _process(dt):
-	pass
+	pass#print("child count of ", self, " : ", get_child_count())

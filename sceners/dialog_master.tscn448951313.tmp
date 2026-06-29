@@ -13,11 +13,3 @@ offset_bottom = 1044.0
 
 [node name="TalkyGuyImage" type="Sprite2D" parent="." unique_id=1102124711]
 position = Vector2(554, 440)
-
-[node name="NameLabel" type="Label" parent="." unique_id=999018285]
-offset_left = 499.99997
-offset_top = 629.0
-offset_right = 540.0
-offset_bottom = 652.0
-scale = Vector2(0.9792701, 1.023888)
-uppercase = true

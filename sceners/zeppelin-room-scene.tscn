@@ -17,6 +17,7 @@ script = ExtResource("1_4pbkg")
 
 [node name="FadeoutPolygon" type="ColorRect" parent="." unique_id=2107557677]
 self_modulate = Color(1, 1, 1, 0)
+z_index = 999
 offset_left = -884.0
 offset_top = -804.0
 offset_right = 2668.0

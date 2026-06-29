@@ -4,10 +4,13 @@ var current_dialog_id = 0
 var current_talky_guy = ""
 
 var allcharimages = {}
+var allcharimageypositions = {}
 var dialogue_image_queue = []
 
 var dialogue_parts = []
 var ending_options = {}
+
+var talky_guy_names_by_id = {}
 
 
 func InitializeDialog(dialog_id):
@@ -59,17 +62,15 @@ func InitializeDialog(dialog_id):
 
 func NextDialogPoint():
 	if len(dialogue_parts) == 0:	#failsave
-		print("failsaved because there were no more dialogue parts")
 		return
 		
-	#prepare text
+	#text
 	var next_text = dialogue_parts[0]
 	dialogue_parts.remove_at(0)
 	
-	#enforce text
 	$MainText.text = next_text
 	
-	#prepare image
+	#image
 	var next_image_name = dialogue_image_queue[0]
 	dialogue_image_queue.remove_at(0)
 	
@@ -77,8 +78,12 @@ func NextDialogPoint():
 	if next_image_name in allcharimages.keys():
 		next_image = allcharimages[next_image_name]
 		
-	#enforce image
 	$TalkyGuyImage.texture = next_image
+	$TalkyGuyImage.global_position.y = allcharimageypositions[next_image]
+	
+	#character name
+	var current_speaker_name = talky_guy_names_by_id[current_talky_guy]
+	$NameLabel.text = current_speaker_name
 		
 	#check if its the end
 	if len(dialogue_parts) == 0:
@@ -107,16 +112,19 @@ func SendOnButtonPress(pressed_button):
 	var ending_sender = pressed_button.get_meta("ending_sender")
 	if ending_sender == 0:
 		#end dialogue existence and get back to normal view
-		self.hide()
-		self.get_parent().StartExistingAfterDialogue()
+		get_parent().currently_fading_out = true
+		get_parent().current_fadeout_function = "DialogueEnd"
+		get_parent().find_child("FadeoutPolygon").visible = true
 	else:
+		#aw sh*t here we go again
 		InitializeDialog(ending_sender)
-		for child in self.get_children():
-			if child is Button:
-				child.hide()
-				remove_child(child)
-				#child.free()
+		DeleteButtonChildren()
 
+func DeleteButtonChildren():
+	for child in self.get_children():
+		if child is Button:
+			child.hide()
+			remove_child(child)
 
 func _ready():
 	
@@ -128,6 +136,15 @@ func _ready():
 			
 		var local_charimg_texture = load("assets/characters/"+charimg_file)
 		allcharimages[charimg_file.split(".",false)[0]] = local_charimg_texture
+		allcharimageypositions[local_charimg_texture] = 690 - int(local_charimg_texture.get_image().get_height() * 0.5)
+		
+	#get the names for the speakers
+	var speaker_name_file = FileAccess.open("dialogue_data/speaker_ids_to_names.txt",FileAccess.READ)
+	var speaker_name_lines = speaker_name_file.get_as_text().split("\n",false)
+	for speaker_name_line in speaker_name_lines:
+		var splitted = speaker_name_line.split(";")
+		var character_name = splitted[1].replace("/n","\n")
+		talky_guy_names_by_id[splitted[0]] = character_name
 		
 	
 func _process(dt):

@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c7lk8uoq8ynj4" path="res://code/interactables.gd" id="1_4pbkg"]
 [ext_resource type="Script" uid="uid://cbaahdnse0oui" path="res://code/zeppelin_master.gd" id="1_m287k"]
+[ext_resource type="Texture2D" uid="uid://bpwnu2dabtmyx" path="res://assets/UI/In-Game/pngs/IMG_0438.PNG" id="3_n2ove"]
 [ext_resource type="PackedScene" uid="uid://qfwlj3d4pewy" path="res://sceners/dialog_master.tscn" id="3_vetn3"]
 [ext_resource type="Texture2D" uid="uid://dnruykqnch2g5" path="res://assets/UI/In-Game/pngs/IMG_0423.PNG" id="4_8xier"]
+[ext_resource type="Texture2D" uid="uid://gec6kieox1xx" path="res://assets/UI/In-Game/pngs/IMG_0439.PNG" id="4_y466e"]
 [ext_resource type="Texture2D" uid="uid://28gk0is6t6nb" path="res://assets/UI/In-Game/pngs/IMG_0424.PNG" id="5_n0jsa"]
 [ext_resource type="Texture2D" uid="uid://dcbss00ogs42a" path="res://assets/UI/In-Game/pngs/IMG_0425.PNG" id="6_n2ove"]
 [ext_resource type="Texture2D" uid="uid://d1lrauj77xp71" path="res://assets/UI/In-Game/pngs/IMG_0426.PNG" id="7_y466e"]
@@ -15,12 +17,33 @@
 [ext_resource type="Texture2D" uid="uid://cgikl2fm3dro4" path="res://assets/UI/In-Game/pngs/IMG_0432.PNG" id="13_5s5up"]
 [ext_resource type="Texture2D" uid="uid://bqinq7036jg2h" path="res://assets/UI/In-Game/pngs/IMG_0433.PNG" id="14_45kqk"]
 [ext_resource type="Texture2D" uid="uid://byctdpue3n03r" path="res://assets/UI/In-Game/pngs/IMG_0434.PNG" id="15_2b8nx"]
+[ext_resource type="Texture2D" uid="uid://bi4vey5qvind3" path="res://assets/UI/In-Game/pngs/IMG_0437.PNG" id="16_8xier"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0bv50"]
 load_path = "res://.godot/imported/IMG_0435.PNG-4315e8af79e25dd44356bc9125952ccc.ctex"
 
 [node name="ZeppelinMasterCoordinator" type="Node2D" unique_id=817047071]
 script = ExtResource("1_m287k")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=730203399]
+z_index = -10
+position = Vector2(705, 542)
+scale = Vector2(0.7, 0.8)
+
+[node name="Frame" type="TextureRect" parent="." unique_id=1462425762]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("16_8xier")
+
+[node name="Dialogue Box" type="TextureRect" parent="." unique_id=225841810]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("3_n2ove")
+
+[node name="Dialogue Heading" type="TextureRect" parent="." unique_id=1716401416]
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = ExtResource("4_y466e")
 
 [node name="ZeppelinMap" type="Node2D" parent="." unique_id=849189712]
 z_index = -5
@@ -92,6 +115,9 @@ texture = ExtResource("15_2b8nx")
 position = Vector2(54, 50)
 script = ExtResource("1_4pbkg")
 
+[node name="DialogueMaster" parent="." unique_id=1148411461 instance=ExtResource("3_vetn3")]
+position = Vector2(50, 50)
+
 [node name="FadeoutPolygon" type="ColorRect" parent="." unique_id=2107557677]
 self_modulate = Color(1, 1, 1, 0)
 z_index = 999
@@ -100,10 +126,3 @@ offset_top = -804.0
 offset_right = 2668.0
 offset_bottom = 1910.0
 color = Color(0, 0, 0, 1)
-
-[node name="Background" type="Sprite2D" parent="." unique_id=730203399]
-z_index = -10
-position = Vector2(960, 540)
-
-[node name="DialogueMaster" parent="." unique_id=1148411461 instance=ExtResource("3_vetn3")]
-position = Vector2(50, 50)

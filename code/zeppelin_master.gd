@@ -44,11 +44,9 @@ func _start_FadeIn():
 			change_scene(current_scene_trans_child,current_scene_trans_id)
 		"Dialogue":
 			$RoomViewRoot.visible = false
-			for child in $RoomViewRoot.get_children():
-				child.visible = false
-			$ZeppelinMap.visible = false
 			for child in $ZeppelinMap.get_children():
-				child.visible = false
+				if child is Button:
+					child.visible = false
 			$DialogueMaster.InitializeDialog(current_scene_trans_id)
 		"DialogueEnd":
 			StartExistingAfterDialogue()
@@ -57,8 +55,6 @@ func _start_FadeIn():
 			
 func StartExistingAfterDialogue():
 	$RoomViewRoot.visible = true
-	for child in $RoomViewRoot.get_children():
-		child.visible = true
 	$ZeppelinMap.visible = true
 	for child in $ZeppelinMap.get_children():
 		child.visible = true

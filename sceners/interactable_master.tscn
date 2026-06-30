@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bnj77tk0tdygt"]
+
+[ext_resource type="Script" uid="uid://dfwtoejsort08" path="res://code/interactable_master.gd" id="1_3xpig"]
+
+[node name="InteractableMaster" type="Node2D" unique_id=1124430729]
+script = ExtResource("1_3xpig")
+
+[node name="MainText" type="Label" parent="." unique_id=158037975]
+offset_left = 250.0
+offset_top = 881.0
+offset_right = 1155.0
+offset_bottom = 979.0
+
+[node name="TalkyGuyImage" type="Sprite2D" parent="." unique_id=267305659]
+position = Vector2(678, 490)
+
+[node name="NameLabel" type="Label" parent="." unique_id=1325312460]
+self_modulate = Color(0, 0, 0, 1)
+offset_left = 563.0
+offset_top = 806.0
+offset_right = 805.01697
+offset_bottom = 853.8568
+scale = Vector2(0.9792701, 1.023888)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true

@@ -14,8 +14,6 @@ var ending_option_flags = {}
 var talky_guy_names_by_id = {}
 var currently_in_dialogue = false
 
-var dialogue_flags = []
-
 
 func InitializeDialog(dialog_id):
 	current_dialog_id = dialog_id
@@ -49,7 +47,7 @@ func InitializeDialog(dialog_id):
 			if l.replace(" ","")[0] == "F":		#flag redirector
 				
 				var splitted = l.replace("/n","\n").lstrip("F").split(";",false)
-				if splitted[0] in dialogue_flags:
+				if splitted[0] in get_parent().flags:
 					init_dialogue_id = int(splitted[1])
 					break
 				
@@ -57,7 +55,6 @@ func InitializeDialog(dialog_id):
 			
 			else:
 				current_talky_guy = l
-			
 			
 		elif currently_looking_at_ending_options:
 			var splitted = l.split(";",false)
@@ -89,8 +86,6 @@ func InitializeDialog(dialog_id):
 	else:
 		
 		NextDialogPoint()
-			
-	
 
 func NextDialogPoint():
 	if len(dialogue_parts) == 0:	#failsave
@@ -121,8 +116,6 @@ func NextDialogPoint():
 	if len(dialogue_parts) == 0:
 		DisplayEndingOptions()
 	
-	
-	
 func DisplayEndingOptions():
 	var buttonindex = 0
 	for ending_name in ending_options.keys():
@@ -144,7 +137,7 @@ func DisplayEndingOptions():
 func SendOnButtonPress(pressed_button):
 	var ending_sender = pressed_button.get_meta("ending_sender")
 	for flag in pressed_button.get_meta("ending_flags"):
-		dialogue_flags.append(flag)
+		get_parent().flags.append(flag)
 	if ending_sender == 0:
 		#end dialogue existence and get back to normal view
 		get_parent().currently_fading_out = true
@@ -183,8 +176,7 @@ func _ready():
 		var splitted = speaker_name_line.split(";")
 		var character_name = splitted[1].replace("/n","\n")
 		talky_guy_names_by_id[splitted[0]] = character_name
-		
-	
+
 func _process(dt):
 	if self.visible:
 		if Input.is_action_just_pressed("ForwardDialogue"):

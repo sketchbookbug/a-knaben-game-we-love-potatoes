@@ -12,6 +12,8 @@ var current_fadeout_function = ""
 var current_scene_trans_id = 0
 var current_scene_trans_child = null
 
+var flags = []
+
 func change_fadeout_time(val):
 	total_fadeout_time = val
 	fadeout_alpha_steps_in_a_second = 2 / val
@@ -53,7 +55,15 @@ func _start_FadeIn():
 			for child in $ZeppelinMap.get_children():
 				if child is Button:
 					child.visible = false
+			$InteractableMaster.hide()
 			$DialogueMaster.InitializeDialog(current_scene_trans_id)
+		"Item":
+			$RoomViewRoot.visible = false
+			for child in $ZeppelinMap.get_children():
+				if child is Button:
+					child.visible = false
+			$DialogueMaster.hide()
+			$InteractableMaster.InitializeItem(current_scene_trans_id)
 		"DialogueEnd":
 			StartExistingAfterDialogue()
 			#$DialogueMaster.hide()
@@ -64,6 +74,13 @@ func _start_FadeIn():
 				$DialogueMaster.find_child("NameLabel").text = room_names[current_scene]
 			if current_scene != 9:	#not in lounge -> should show door icon again
 				$ZeppelinMap/DoorIcon.show()
+			$InteractableMaster.show()
+		"ItemEnd":
+			StartExistingAfterDialogue()
+			$InteractableMaster.hide()
+			$InteractableMaster.DeleteButtonChildren()
+			$InteractableMaster.currently_looking_at_item = false
+			$DialogueMaster.show()
 		"CutsceneStart":
 			$CutsceneMaster.StartCutscene(current_scene_trans_id)
 		"CutsceneNext":
@@ -114,6 +131,7 @@ func change_scene(child,id):
 		#print("Entering ", room_names[current_scene])
 	
 func _process(dt):
+	#print(flags)
 	if currently_fading_out:
 		$FadeoutPolygon.self_modulate.a += fadeout_alpha_steps_in_a_second * dt
 		if current_fadeout_function == "CutsceneStart":

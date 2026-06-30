@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://tn8hjajk7phm" path="res://assets/UI/In-Game/Cogwheels/Foreground Cogwheel.png" id="22_quex2"]
 [ext_resource type="Texture2D" uid="uid://c0tmcivmg0wdi" path="res://assets/UI/In-Game/Widgets/Door Symbol.PNG" id="25_2b8nx"]
 [ext_resource type="Script" uid="uid://c4tidbkm8w18m" path="res://code/cutscene_master.gd" id="26_45kqk"]
+[ext_resource type="PackedScene" uid="uid://bnj77tk0tdygt" path="res://sceners/interactable_master.tscn" id="27_s56fh"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0bv50"]
 load_path = "res://.godot/imported/IMG_0435.PNG-4315e8af79e25dd44356bc9125952ccc.ctex"
@@ -243,6 +244,9 @@ position = Vector2(54, 50)
 script = ExtResource("1_4pbkg")
 
 [node name="DialogueMaster" parent="." unique_id=1148411461 instance=ExtResource("3_vetn3")]
+z_index = 40
+
+[node name="InteractableMaster" parent="." unique_id=1124430729 instance=ExtResource("27_s56fh")]
 z_index = 40
 
 [node name="CutsceneMaster" type="Node" parent="." unique_id=755002531]

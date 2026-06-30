@@ -17,3 +17,5 @@
 1,69,60,0
 #test cutscene
 3,0,60,60
+#test interactable
+0,1,60,120

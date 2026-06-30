@@ -1,0 +1,14 @@
+#Has this flag -> Gets sent to other item (0) / dialogue (1) (1 69 -> the 69th dialogue)
+FHAS_DOOMED_THE_WORLD;1;69
+#First line = name of item
+TheSlendermiku
+#description lines
+This has almost overwhelmed the world before.
+Handle with caution.
+I think the part where the head is is up.
+But idk.
+Have fun ig.
+#ending options with flags
+[ENDDESC]
+Pick it up;HAS_DOOMED_THE_WORLD,HAS_SLENDERMIKU
+Die;IS_DEAD

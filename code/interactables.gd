@@ -60,7 +60,7 @@ func button_pressed(cb):
 	#var create_type = cb.get_meta("create_type")
 	match create_type:
 		0:	#interactable (clue, ...)
-			pass
+			get_parent().initiate_scene_set(send_id,self,"Item")
 		1:	#dialogue
 			get_parent().initiate_scene_set(send_id,self,"Dialogue")
 		2:	#scene changer (door, ...)

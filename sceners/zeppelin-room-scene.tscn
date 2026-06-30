@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://cnoxv7e6pexp3" path="res://assets/UI/In-Game/Cogwheels/Background Cogwheel.png" id="20_0qdyj"]
 [ext_resource type="Texture2D" uid="uid://chdikgs5e3343" path="res://assets/UI/In-Game/Cogwheels/Middleground Cogwheel.png" id="21_ss33x"]
 [ext_resource type="Texture2D" uid="uid://tn8hjajk7phm" path="res://assets/UI/In-Game/Cogwheels/Foreground Cogwheel.png" id="22_quex2"]
+[ext_resource type="Texture2D" uid="uid://c0tmcivmg0wdi" path="res://assets/UI/In-Game/Widgets/Door Symbol.PNG" id="25_2b8nx"]
 [ext_resource type="Script" uid="uid://c4tidbkm8w18m" path="res://code/cutscene_master.gd" id="26_45kqk"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0bv50"]
@@ -228,6 +229,13 @@ offset_top = -31.0
 offset_right = 361.0
 offset_bottom = 1049.0
 texture = SubResource("CompressedTexture2D_0bv50")
+
+[node name="Zeppelin Map Metal2" type="TextureRect" parent="ZeppelinMap" unique_id=831832439]
+offset_left = -1367.0
+offset_top = 556.0
+offset_right = -1275.0
+offset_bottom = 766.0
+texture = ExtResource("25_2b8nx")
 
 [node name="RoomViewRoot" type="Node2D" parent="." unique_id=161144894]
 position = Vector2(54, 50)

@@ -59,6 +59,8 @@ func button_pressed(cb):
 			get_parent().initiate_scene_set(send_id,self,"Dialogue")
 		2:	#scene changer (door, ...)
 			get_parent().initiate_scene_set(send_id,self,"DoorTransition")
+		3:
+			get_parent().initiate_scene_set(send_id,self,"CutsceneStart")
 
 func _ready():
 	#set_scene(0)

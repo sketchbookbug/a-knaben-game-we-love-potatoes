@@ -2,6 +2,7 @@ create types:
 	0 = interactable (clue, ...)
 	1 = dialogue
 	2 = scene changer (door, ...)
+	3 = cutscene
 
 scene ids:
 	0 = corridor
@@ -43,3 +44,6 @@ format for dialogues:
 	
 talkies:
 	1 = jar jar binks (yes he's necessary)
+	
+cutscenes:
+	0 = TestCutscene (very tragic and sad btw)

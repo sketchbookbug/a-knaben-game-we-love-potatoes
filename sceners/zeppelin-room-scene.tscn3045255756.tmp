@@ -165,6 +165,7 @@ offset_bottom = 1080.0
 texture = ExtResource("6_5s5up")
 
 [node name="ZeppelinMap" type="Node2D" parent="." unique_id=849189712]
+z_index = -5
 position = Vector2(1550, 40)
 script = ExtResource("1_4pbkg")
 
@@ -239,37 +240,9 @@ z_index = 40
 [node name="CutsceneMaster" type="Node" parent="." unique_id=755002531]
 script = ExtResource("26_45kqk")
 
-[node name="BackBackground" type="ColorRect" parent="CutsceneMaster" unique_id=319803029]
-visible = false
-z_index = 3999
-offset_left = -884.0
-offset_top = -804.0
-offset_right = 2668.0
-offset_bottom = 1910.0
-color = Color(0.26657522, 0.2665752, 0.2665752, 1)
-
-[node name="Background" type="Sprite2D" parent="CutsceneMaster" unique_id=672536373]
-visible = false
-z_index = 4000
-z_as_relative = false
-position = Vector2(960, 540)
-
-[node name="CutsceneText" type="Label" parent="CutsceneMaster" unique_id=2129864680]
-visible = false
-self_modulate = Color(0, 0, 0, 1)
-z_index = 4003
-z_as_relative = false
-offset_left = 460.0
-offset_top = 750.0
-offset_right = 1460.0
-offset_bottom = 800.0
-horizontal_alignment = 1
-autowrap_mode = 2
-uppercase = true
-
 [node name="FadeoutPolygon" type="ColorRect" parent="." unique_id=2107557677]
 self_modulate = Color(1, 1, 1, 0)
-z_index = 4069
+z_index = 999
 offset_left = -884.0
 offset_top = -804.0
 offset_right = 2668.0

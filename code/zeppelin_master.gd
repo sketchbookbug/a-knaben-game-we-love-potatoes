@@ -16,7 +16,6 @@ func change_fadeout_time(val):
 	total_fadeout_time = val
 	fadeout_alpha_steps_in_a_second = 2 / val
 
-
 func _ready():
 	
 	$FadeoutPolygon.self_modulate.a = 0
@@ -63,6 +62,14 @@ func _start_FadeIn():
 			$DialogueMaster.find_child("NameLabel").text = ""
 			if current_scene in room_names.keys():
 				$DialogueMaster.find_child("NameLabel").text = room_names[current_scene]
+		"CutsceneStart":
+			$CutsceneMaster.StartCutscene(current_scene_trans_id)
+		"CutsceneNext":
+			$CutsceneMaster.NextCutscenePoint()
+		"CutsceneEnd":
+			$CutsceneMaster.hide()
+			$CutsceneMaster.currently_playing_cutscene = false
+			
 			
 func StartExistingAfterDialogue():
 	$RoomViewRoot.visible = true
@@ -107,6 +114,8 @@ func change_scene(child,id):
 func _process(dt):
 	if currently_fading_out:
 		$FadeoutPolygon.self_modulate.a += fadeout_alpha_steps_in_a_second * dt
+		if current_fadeout_function == "CutsceneStart":
+			$CutsceneMaster/BackBackground.self_modulate.a += fadeout_alpha_steps_in_a_second * dt
 		if $FadeoutPolygon.self_modulate.a >= 1:
 			self._start_FadeIn()
 	elif currently_fading_in:

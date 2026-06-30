@@ -15,3 +15,5 @@
 2,9,0,540
 #test dialog
 1,69,60,0
+#test cutscene
+3,0,60,60

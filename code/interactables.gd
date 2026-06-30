@@ -6,6 +6,13 @@ func set_scene(scene_id=0):
 		if child is Button:
 			child.hide()
 			child.free()
+			
+	if name == "ZeppelinMap":
+		if scene_id == 1009:	#lounge -> hide door icon
+			$DoorIcon.hide()
+		else:
+			$DoorIcon.show()
+		
 	
 	#print("loading scene ", scene_id)
 	var interactable_data_file = FileAccess.open("zeppelin_data/" + str(scene_id) + ".txt",FileAccess.READ)
@@ -37,9 +44,8 @@ func create_interactable(create_type=0,send_id=0,button_position=Vector2(0,0),bu
 	current_button.set_meta("send_id",send_id)
 	current_button.set_position(button_position)
 	current_button.set_size(button_size)
-	if name == "ZeppelinMap":
-		current_button.self_modulate.a = 0
-	else:
+	current_button.self_modulate.a = 0
+	if create_type != 2:
 		current_button.self_modulate.a = 1
 	current_button.z_as_relative = false
 	current_button.z_index = 99

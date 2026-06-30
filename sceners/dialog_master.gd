@@ -34,6 +34,8 @@ func InitializeDialog(dialog_id):
 	var line_index = 0
 	var init_dialogue_id = -1
 	
+	get_parent().find_child("ZeppelinMap").find_child("DoorIcon").hide()
+	
 	#print(dialogue_data_lines)
 	
 	for l in dialogue_data_lines:

@@ -62,6 +62,8 @@ func _start_FadeIn():
 			$DialogueMaster.find_child("NameLabel").text = ""
 			if current_scene in room_names.keys():
 				$DialogueMaster.find_child("NameLabel").text = room_names[current_scene]
+			if current_scene != 9:	#not in lounge -> should show door icon again
+				$ZeppelinMap/DoorIcon.show()
 		"CutsceneStart":
 			$CutsceneMaster.StartCutscene(current_scene_trans_id)
 		"CutsceneNext":

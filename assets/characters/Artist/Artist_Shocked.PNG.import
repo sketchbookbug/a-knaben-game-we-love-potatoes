@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drxoi0savarjt"
-path="res://.godot/imported/IMG_0447.PNG-314bd7b27c5dce7eaa0503a949504d3f.ctex"
+uid="uid://btopdepas6kx6"
+path="res://.godot/imported/Artist_Shocked.PNG-b99ad66302b3f5d70caec64610f46b29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Artist/IMG_0447.PNG"
-dest_files=["res://.godot/imported/IMG_0447.PNG-314bd7b27c5dce7eaa0503a949504d3f.ctex"]
+source_file="res://assets/characters/Artist/Artist_Shocked.PNG"
+dest_files=["res://.godot/imported/Artist_Shocked.PNG-b99ad66302b3f5d70caec64610f46b29.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cs58xg8vo8sl6"
-path="res://.godot/imported/IMG_0445.PNG-fc07fbd88cf24a123f14059f7154d4d6.ctex"
+uid="uid://dyvwo0fjsn6vn"
+path="res://.godot/imported/Cleric_Insecure.PNG-2ee91c20054498795d266fecbdea2050.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Cleric/IMG_0445.PNG"
-dest_files=["res://.godot/imported/IMG_0445.PNG-fc07fbd88cf24a123f14059f7154d4d6.ctex"]
+source_file="res://assets/characters/Cleric/Cleric_Insecure.PNG"
+dest_files=["res://.godot/imported/Cleric_Insecure.PNG-2ee91c20054498795d266fecbdea2050.ctex"]
 
 [params]
 

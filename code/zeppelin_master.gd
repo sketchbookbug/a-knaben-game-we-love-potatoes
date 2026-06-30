@@ -17,7 +17,7 @@ var currently_zooming_out = false
 var current_zoomout_focus = Vector2(0.0,0.0)
 var total_zoomin_movement = Vector2(0.0,0.0)
 var zoomin_movement_in_a_second = Vector2(0.0,0.0)
-var total_zoomsteps_in_a_second = fadeout_alpha_steps_in_a_second * 0.25	#zoomin to 1.25
+var total_zoomsteps_in_a_second = fadeout_alpha_steps_in_a_second * 0.25 * 2	#zoomin to 1.25
 
 var flags = []
 
@@ -77,6 +77,9 @@ func _start_FadeIn():
 					child.visible = false
 			$DialogueMaster.hide()
 			$InteractableMaster.InitializeItem(current_scene_trans_id)
+			currently_zooming_in = false
+			$Background.scale = Vector2(1.25,1.25)
+			$InteractableMaster/TalkyGuyImage.self_modulate.a = 1
 		"DialogueEnd":
 			StartExistingAfterDialogue()
 			#$DialogueMaster.hide()
@@ -94,6 +97,8 @@ func _start_FadeIn():
 			$InteractableMaster.DeleteButtonChildren()
 			$InteractableMaster.currently_looking_at_item = false
 			$DialogueMaster.show()
+			currently_zooming_out = false
+			$Background.scale = Vector2(1.0,1.0)
 		"CutsceneStart":
 			$CutsceneMaster.StartCutscene(current_scene_trans_id)
 		"CutsceneNext":
@@ -172,3 +177,4 @@ func _process(dt):
 		$Background.scale.y -= total_zoomsteps_in_a_second * dt
 		$Background.global_position.x += zoomin_movement_in_a_second.x * dt
 		$Background.global_position.y += zoomin_movement_in_a_second.y * dt
+		$InteractableMaster/TalkyGuyImage.self_modulate.a -= fadeout_alpha_steps_in_a_second * dt * 2

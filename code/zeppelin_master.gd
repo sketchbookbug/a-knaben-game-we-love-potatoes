@@ -12,11 +12,24 @@ var current_fadeout_function = ""
 var current_scene_trans_id = 0
 var current_scene_trans_child = null
 
+var currently_zooming_in = false
+var currently_zooming_out = false
+var current_zoomout_focus = Vector2(0.0,0.0)
+var total_zoomin_movement = Vector2(0.0,0.0)
+var zoomin_movement_in_a_second = Vector2(0.0,0.0)
+var total_zoomsteps_in_a_second = fadeout_alpha_steps_in_a_second * 0.25	#zoomin to 1.25
+
 var flags = []
 
 func change_fadeout_time(val):
 	total_fadeout_time = val
 	fadeout_alpha_steps_in_a_second = 2 / val
+	
+func calculate_zoomin_stuff_for_bg():
+	total_zoomin_movement.x = (705-current_zoomout_focus.x) * 1.25
+	total_zoomin_movement.y = (542-current_zoomout_focus.y) * 1.25
+	zoomin_movement_in_a_second.x = 0#total_zoomin_movement.x / (total_fadeout_time * 0.5)
+	zoomin_movement_in_a_second.y = 0#total_zoomin_movement.y / (total_fadeout_time * 0.5)
 
 func _ready():
 	
@@ -99,16 +112,23 @@ func StartExistingAfterDialogue():
 func _stop_Fadestuff():
 	currently_fading_in = false
 	currently_fading_out = false
+	currently_zooming_in = false
+	currently_zooming_out = false
 	$FadeoutPolygon.self_modulate.a = 0
 	$FadeoutPolygon.visible = false
 	
-func initiate_scene_set(id,child,scene_type):
+func initiate_scene_set(id,child,scene_type,interactable_pos=Vector2(0.0,0.0)):
 	currently_fading_in = false
 	currently_fading_out = true
 	current_scene_trans_id = id
 	current_scene_trans_child = child
 	current_fadeout_function = scene_type
-	
+	if scene_type == "Item":
+		currently_zooming_in = true
+		current_zoomout_focus = interactable_pos
+		calculate_zoomin_stuff_for_bg()
+	elif scene_type == "ItemEnd":
+		currently_zooming_out = true
 	$FadeoutPolygon.visible = true
 	
 func change_scene(child,id):
@@ -142,3 +162,13 @@ func _process(dt):
 		$FadeoutPolygon.self_modulate.a -= fadeout_alpha_steps_in_a_second * dt
 		if $FadeoutPolygon.self_modulate.a <= 0:
 			self._stop_Fadestuff()
+	if currently_zooming_in:
+		$Background.scale.x += total_zoomsteps_in_a_second * dt
+		$Background.scale.y += total_zoomsteps_in_a_second * dt
+		$Background.global_position.x -= zoomin_movement_in_a_second.x * dt
+		$Background.global_position.y -= zoomin_movement_in_a_second.y * dt
+	elif currently_zooming_out:
+		$Background.scale.x -= total_zoomsteps_in_a_second * dt
+		$Background.scale.y -= total_zoomsteps_in_a_second * dt
+		$Background.global_position.x += zoomin_movement_in_a_second.x * dt
+		$Background.global_position.y += zoomin_movement_in_a_second.y * dt

@@ -36,6 +36,42 @@ load_path = "res://.godot/imported/IMG_0435.PNG-4315e8af79e25dd44356bc9125952ccc
 position = Vector2(-3, -1)
 script = ExtResource("1_m287k")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=515162705]
+z_index = -9
+offset_left = -564.0
+offset_top = -169.0
+offset_right = 154.57141
+offset_bottom = 146.0
+scale = Vector2(3.4342935, 1)
+color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=255696689]
+z_index = -9
+offset_left = -486.0
+offset_top = 920.0
+offset_right = 232.57141
+offset_bottom = 1235.0
+scale = Vector2(3.4342935, 1)
+color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1185305173]
+z_index = -9
+offset_left = -274.0
+offset_top = -14.0
+offset_right = 444.57153
+offset_bottom = 301.0
+scale = Vector2(0.5783268, 4.010813)
+color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=813462369]
+z_index = -9
+offset_left = 1278.0
+offset_top = -68.0
+offset_right = 1996.5715
+offset_bottom = 247.0
+scale = Vector2(1.0983267, 4.010813)
+color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+
 [node name="Corners" type="TextureRect" parent="." unique_id=2020888343]
 offset_right = 1920.0
 offset_bottom = 1080.0

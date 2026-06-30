@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b1wyt4ye01huw"]
+
+[node name="backgroundmaster" type="Node2D" unique_id=2033025245]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=2054377611]
+z_index = -10
+position = Vector2(705, 542)
+scale = Vector2(0.7, 0.8)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=640033415]
+position = Vector2(705, 542)

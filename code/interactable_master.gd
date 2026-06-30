@@ -135,6 +135,7 @@ func SendOnButtonPress(pressed_button):
 		get_parent().currently_fading_out = true
 		get_parent().current_fadeout_function = "ItemEnd"
 		get_parent().find_child("FadeoutPolygon").visible = true
+		get_parent().currently_zooming_out = true
 	else:
 		#aw sh*t here we go again
 		DeleteButtonChildren()

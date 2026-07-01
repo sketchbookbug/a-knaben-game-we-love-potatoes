@@ -104,19 +104,31 @@ func _ready():
 		notes_about_em_by_id[i+1] = []
 		notes_from_em_by_id[i+1] = []
 		secured_non_murderer[i+1] = false
+		
+	$FlipLeftButton.connect("button_down",TrytoFlipOnePageLeft)	
+	$FlipRightButton.connect("button_down",TrytoFlipOnePageRight)	
+		
+		
+func TrytoFlipOnePageLeft():
+	var new_page_to_flip_to = current_page - 1
+	if new_page_to_flip_to in accessible_pages:
+		ComputeNewPage(new_page_to_flip_to)
+		DisplayInfo()
+		
+func TrytoFlipOnePageRight():
+	var new_page_to_flip_to = current_page + 1
+	if new_page_to_flip_to in accessible_pages:
+		ComputeNewPage(new_page_to_flip_to)
+		
+		#instead, await stuff; this is only temporary
+		DisplayInfo()
 	
 func _process(dt):
 	if visible:	#and not animation being played
 		#if left key or a is pressed, go back one page, except you cant
 		if Input.is_action_just_pressed("JournalLeft"):
-			var new_page_to_flip_to = current_page - 1
-			if new_page_to_flip_to in accessible_pages:
-				ComputeNewPage(new_page_to_flip_to)
-				DisplayInfo()
+			TrytoFlipOnePageLeft()
 			
 		#if right key or d is pressed, go forward one page, except you cant
 		elif Input.is_action_just_pressed("JournalRight"):
-			var new_page_to_flip_to = current_page + 1
-			if new_page_to_flip_to in accessible_pages:
-				ComputeNewPage(new_page_to_flip_to)
-				DisplayInfo()
+			TrytoFlipOnePageRight()

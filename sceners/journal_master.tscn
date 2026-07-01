@@ -99,3 +99,21 @@ offset_bottom = 933.0
 text = "could be the murderer?"
 label_settings = SubResource("LabelSettings_qsl37")
 uppercase = true
+
+[node name="FlipLeftButton" type="Button" parent="." unique_id=122638684]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 3800
+offset_left = 63.0
+offset_top = 420.00003
+offset_right = 103.0
+offset_bottom = 566.0
+scale = Vector2(2.166713, 1.3576592)
+
+[node name="FlipRightButton" type="Button" parent="." unique_id=1077786742]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 3800
+offset_left = 1092.0
+offset_top = 433.00003
+offset_right = 1132.0
+offset_bottom = 579.0
+scale = Vector2(2.166713, 1.3576592)

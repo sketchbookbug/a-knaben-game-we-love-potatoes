@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c662u2nrjb7o"]
+
+[ext_resource type="Script" uid="uid://c0380pu3cbvgu" path="res://code/journal_master.gd" id="1_6fccn"]
+
+[node name="JournalMaster" type="Node2D" unique_id=1636194239]
+visible = false
+script = ExtResource("1_6fccn")

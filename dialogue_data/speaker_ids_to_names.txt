@@ -1,1 +1,5 @@
-1;Jar Jar Binks, Lord of :3
+1;Aristocrat;Be rich and look rich, too
+2;Cleric;Cleric
+3;Artist;Artist
+4;Captain;Captain
+5;Chef;Chef

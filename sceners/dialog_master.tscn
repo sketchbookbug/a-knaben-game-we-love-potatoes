@@ -12,7 +12,8 @@ offset_right = 1155.0
 offset_bottom = 979.0
 
 [node name="TalkyGuyImage" type="Sprite2D" parent="." unique_id=1102124711]
-position = Vector2(678, 800)
+position = Vector2(705, 800)
+scale = Vector2(0.5, 0.5)
 
 [node name="NameLabel" type="Label" parent="." unique_id=999018285]
 self_modulate = Color(0, 0, 0, 1)

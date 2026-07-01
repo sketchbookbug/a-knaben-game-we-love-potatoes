@@ -12,6 +12,7 @@ var ending_options = {}
 var ending_option_flags = {}
 
 var talky_guy_names_by_id = {}
+var talky_guy_ids_by_names = {}
 var currently_in_dialogue = false
 
 
@@ -159,16 +160,6 @@ func DeleteButtonChildren():
 
 func _ready():
 	
-	#import all images for the characters
-	var charimg_files = DirAccess.get_files_at("assets/characters")
-	for charimg_file in charimg_files:
-		if len(charimg_file.split(".",false)) != 2:
-			continue
-			
-		var local_charimg_texture = load("assets/characters/"+charimg_file)
-		allcharimages[charimg_file.split(".",false)[0]] = local_charimg_texture
-		allcharimageypositions[local_charimg_texture] = 800 - int(local_charimg_texture.get_image().get_height() * 0.5)
-		
 	#get the names for the speakers
 	var speaker_name_file = FileAccess.open("dialogue_data/speaker_ids_to_names.txt",FileAccess.READ)
 	var speaker_name_lines = speaker_name_file.get_as_text().split("\n",false)
@@ -176,6 +167,38 @@ func _ready():
 		var splitted = speaker_name_line.split(";")
 		var character_name = splitted[1].replace("/n","\n")
 		talky_guy_names_by_id[splitted[0]] = character_name
+		talky_guy_ids_by_names[character_name] = splitted[0]
+	
+	#import all images for the characters
+	var charimg_folders = DirAccess.get_directories_at("assets/characters")
+	for charimg_folder in charimg_folders:
+		if charimg_folder not in talky_guy_ids_by_names:
+			continue
+			
+		var current_char_id = talky_guy_ids_by_names[charimg_folder]
+		var charimg_files = DirAccess.get_files_at("assets/characters/" + charimg_folder + "/")
+		var charimg_index = 0
+		
+		for charimg_file in charimg_files:
+			if len(charimg_file.split(".",false)) != 2:
+				continue
+			
+			var local_charimg_texture = load("assets/characters/"+ charimg_folder + "/" + charimg_file)
+			allcharimages[str(current_char_id)+"_"+str(charimg_index)] = local_charimg_texture
+			allcharimageypositions[local_charimg_texture] = 800 - int(local_charimg_texture.get_image().get_height() * 0.5 * 0.5)	#2nd * 0.5 bcs we scale em down to 0.5x scale anyways
+			charimg_index += 1
+	
+	
+	
+#	var charimg_files = DirAccess.get_("assets/characters")
+#	for charimg_file in charimg_files:
+#		print(charimg_file)
+#		if len(charimg_file.split(".",false)) != 2:
+#			continue
+#			
+#		var local_charimg_texture = load("assets/characters/"+charimg_file)
+#		allcharimages[charimg_file.split(".",false)[0]] = local_charimg_texture
+#		allcharimageypositions[local_charimg_texture] = 800 - int(local_charimg_texture.get_image().get_height() * 0.5)
 
 func _process(dt):
 	if self.visible:

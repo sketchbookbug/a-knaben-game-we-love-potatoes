@@ -52,10 +52,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="NameLabel" type="Label" parent="." unique_id=297561771]
 z_index = 10
-offset_left = 632.0
-offset_top = 125.0
-offset_right = 1048.0
-offset_bottom = 201.0
+offset_left = 113.0
+offset_top = 119.0
+offset_right = 1118.0
+offset_bottom = 195.0
 text = "name label"
 label_settings = SubResource("LabelSettings_ox244")
 horizontal_alignment = 1
@@ -77,17 +77,17 @@ z_index = 10
 offset_left = 619.0
 offset_top = 247.0
 offset_right = 1088.0
-offset_bottom = 510.0
+offset_bottom = 427.0
 text = "information from them:"
 label_settings = SubResource("LabelSettings_qsl37")
 uppercase = true
 
 [node name="InfoAboutLabel" type="Label" parent="." unique_id=76089428]
 z_index = 10
-offset_left = 618.0
-offset_top = 520.0
-offset_right = 1087.0
-offset_bottom = 844.0
+offset_left = 617.0
+offset_top = 426.0
+offset_right = 1086.0
+offset_bottom = 880.0
 text = "information about them:"
 label_settings = SubResource("LabelSettings_qsl37")
 uppercase = true

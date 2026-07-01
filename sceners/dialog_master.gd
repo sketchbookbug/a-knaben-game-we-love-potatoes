@@ -84,7 +84,7 @@ func InitializeDialog(dialog_id):
 			#print("we have arrived here, my friend <", l)
 			var splitted = l.split(";",false)
 			dialogue_image_queue.push_back(current_talky_guy + "_" + splitted[0])	#the expression of the talky guy so we can later get the image of them
-			dialogue_parts.push_back(splitted[1].replace("/n","\n"))
+			dialogue_parts.push_back(splitted[1])
 			
 		line_index += 1
 		
@@ -113,7 +113,7 @@ func NextDialogPoint():
 	var next_image_name = dialogue_image_queue[0]
 	dialogue_image_queue.remove_at(0)
 	
-	var next_image = allcharimages["1_1"]
+	var next_image = null
 	if next_image_name in allcharimages.keys():
 		next_image = allcharimages[next_image_name]
 		
@@ -139,8 +139,8 @@ func DisplayEndingOptions():
 		current_button.set_size(Vector2(200,30))
 		current_button.z_as_relative = false
 		current_button.z_index = 99
-		current_button.text = ending_name
-		current_button.set_position(Vector2(930,780-40*buttonindex))
+		current_button.text = ending_name.replace("/n","\n")
+		current_button.set_position(Vector2(880,750-70*buttonindex))
 		var lambda = func local_lambda(): SendOnButtonPress(current_button)
 		current_button.pressed.connect(lambda)
 		add_child(current_button)
@@ -178,7 +178,7 @@ func _ready():
 		var splitted = speaker_name_line.split(";")
 		var character_name = splitted[1].replace("/n","\n")
 		talky_guy_names_by_id[splitted[0]] = character_name
-		talky_guy_ids_by_names[character_name] = splitted[0]
+		talky_guy_ids_by_names[splitted[2].replace("/n","\n")] = splitted[0]
 	
 	#import all images for the characters
 	var charimg_folders = DirAccess.get_directories_at("assets/characters")

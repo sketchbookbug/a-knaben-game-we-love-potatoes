@@ -1,0 +1,14 @@
+2
+#What do you know about of Pampershire?
+1;Well, not much, I fear...
+1;He went over to his room at around 11pm, /n but i heard him rumbling about between /n a few rooms...
+2;Im pretty sure Braimera doesnt like him...
+1;And he doesn't like her, too.
+1;So i don't like him, either.
+2;Im sorry, I just don't know a lot about him...
+2;He just seemed annoyed when I tried to convert him, /n so i deemed him uninteresting.
+[ENDCONVO]
+102;I trust this will be of more help /n than you think of it to be.
+[INFOGAINS]
+1;0;WENT TO HIS ROOM AT 11 PM;0
+1;0;WENT AROUND THE ROOMS AT 11 PM;0

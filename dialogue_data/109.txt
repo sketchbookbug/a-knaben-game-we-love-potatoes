@@ -1,0 +1,9 @@
+2
+#What do you know about Nayoko? -> when was the snoring?
+1;It felt like the whole Braimera-forsaken night...
+1;But if I had to guess, it would be around midnight.
+1;I know I'm not helping much, I hope you can forgive me... I haven't had much sleep.
+[ENDCONVO]
+102;I trust that will come in useful later.
+[INFOGAINS]
+3;0;WAS SLEEPING AROUND MIDNIGHT;0

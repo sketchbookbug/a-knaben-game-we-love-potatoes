@@ -1,0 +1,11 @@
+2
+0;Okay... How may I help you?
+[ENDCONVO]
+0;I think that will do for now. 
+107;What were you doing yesterday?
+108;Can you tell me about Braimera?
+106;What do you know about /n the captain, Scuritesnat?
+105;What do you know about /n the chef, Rumblebelly?
+104;What do you know about /n the artist, Nayoko?
+103;What do you know about /n the aristocrate, of Pampershire?
+[INFOGAINS]

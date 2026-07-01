@@ -1,0 +1,13 @@
+FHAS_SPOKEN_TO_CLERIC_BEFORE;102
+2
+2;Ah, Mr. Dawson. May Braimera shine her light upon you.
+1;Please excuse how messy my cabin is... 
+1;This whole situation has been rather disturbing...
+1;To all of us, I trust.
+0;But now, I must say I'm a little bit excited!
+0;I mean, you know, finding the murderer and allat!
+2;I know that's kinda selfish, so please forgive me...
+[ENDCONVO]
+102;Shall we begin?;HAS_SPOKEN_TO_CLERIC_BEFORE
+0;We shall continue soon.;HAS_SPOKEN_TO_CLERIC_BEFORE
+[INFOGAINS]

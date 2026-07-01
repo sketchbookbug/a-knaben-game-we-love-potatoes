@@ -13,7 +13,6 @@ offset_left = 250.0
 offset_top = 881.0
 offset_right = 1155.0
 offset_bottom = 979.0
-paragraph_separator = "/n"
 
 [node name="TalkyGuyImage" type="Sprite2D" parent="." unique_id=1102124711]
 position = Vector2(705, 800)

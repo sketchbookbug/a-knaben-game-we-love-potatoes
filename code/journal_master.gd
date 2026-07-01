@@ -102,13 +102,14 @@ func _ready():
 	for speaker_name_line in speaker_name_lines:
 		var splitted = speaker_name_line.split(";")
 		ids_to_names_and_profession[int(splitted[0])] = [splitted[1].replace("/n","\n"),splitted[2].replace("/n","\n")]
-		names_to_id[splitted[1].replace("/n","\n")] = int(splitted[0])
+		names_to_id[splitted[2].replace("/n","\n")] = int(splitted[0])
 		
 	#import all images for the characters
 	var charimg_folders = DirAccess.get_directories_at("assets/characters")
 	for charimg_folder in charimg_folders:
 		#if charimg_folder not in ids_to_names_and_profession.keys():
 		#	continue
+			
 			
 		var current_char_id = names_to_id[charimg_folder]
 		var charimg_files = DirAccess.get_files_at("assets/characters/" + charimg_folder + "/")

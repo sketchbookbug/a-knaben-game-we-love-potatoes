@@ -1,0 +1,10 @@
+2
+#What do you know about Nayoko?
+1;I fear I will have to disappoint you... For i do not know much about her.
+2;She seemed interested when I told her about Braimera, but I haven't seen her much...
+2;I've been mostly just hearing her in her room, mumbling about her paintings and work...
+0;And Braimera beware, that awful snoring!
+1;Don't tell her I told you that, but I'm pretty sure the Gods and Stars themselves can hear her snoring!
+[ENDCONVO]
+109;Around when did you hear that snoring?
+[INFOGAINS]

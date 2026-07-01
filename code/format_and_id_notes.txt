@@ -23,10 +23,6 @@ scene ids:
 format for interactables:
 	create_type,send_id,centerx,centery,sizex,sizey
 	
-dialog ids:
-	0 = end the dialog system; go back to normal stuff
-	69 = test dialog
-	70 = test dialog 2
 	
 format for dialogues:
 	#first all the flag redirectors
@@ -47,3 +43,19 @@ talkies:
 	
 cutscenes:
 	0 = TestCutscene (very tragic and sad btw)
+	
+dialog ids:
+	0 = end the dialog system; go back to normal stuff
+	1 = aristocrat initial (him in the lobby, no flags, no stuff)
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

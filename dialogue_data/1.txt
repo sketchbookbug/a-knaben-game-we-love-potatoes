@@ -1,0 +1,6 @@
+1
+#all the lines of dialog
+
+[ENDCONVO]
+#next dialogue id;stuff to say in the button;All flags to set when selecting this option (seperated by commas)
+[INFOGAINS]

@@ -24,7 +24,7 @@ var flags = []
 func change_fadeout_time(val):
 	total_fadeout_time = val
 	fadeout_alpha_steps_in_a_second = 2 / val
-	
+
 func calculate_zoomin_stuff_for_bg():
 	total_zoomin_movement.x = (705-current_zoomout_focus.x) * 1.25
 	total_zoomin_movement.y = (542-current_zoomout_focus.y) * 1.25
@@ -53,8 +53,7 @@ func _ready():
 	#$DialogueMaster.hide()
 	initiate_scene_set(0,$RoomViewRoot,"DoorTransition")
 	_start_FadeIn()
-	
-	
+
 func _start_FadeIn():
 	$FadeoutPolygon.self_modulate.a = 1
 	currently_fading_out = false
@@ -116,8 +115,7 @@ func _start_FadeIn():
 		"CutsceneEnd":
 			$CutsceneMaster.hide()
 			$CutsceneMaster.currently_playing_cutscene = false
-			
-			
+
 func StartExistingAfterDialogue():
 	$RoomViewRoot.visible = true
 	$ZeppelinMap.visible = true

@@ -1,6 +1,7 @@
 extends Node2D
 
 var current_page = 0
+var accessible_pages = [1,2,3,4,5]
 
 var ids_to_names_and_profession = {}
 var names_to_id = {}
@@ -33,6 +34,7 @@ func CloseThyself():
 	#play the opening animation in reverse
 
 func ComputeNewPage(new_id,show_page_flip_anim=true):
+	var old_id = current_page
 	current_page = new_id
 	
 	#get all the information
@@ -41,7 +43,6 @@ func ComputeNewPage(new_id,show_page_flip_anim=true):
 	notes_from_current_person = notes_from_em_by_id[current_page]
 	could_be_it = not secured_non_murderer[current_page]
 	
-	print(allcharimages)
 	current_char_img = allcharimages[str(new_id) + "_" + "0"]
 	
 	#prepare displayable infos
@@ -53,7 +54,7 @@ func ComputeNewPage(new_id,show_page_flip_anim=true):
 	for info in notes_from_current_person:
 		from_text += " - " + info + "\n"
 		
-	if show_page_flip_anim:		#show the animation of the page flipping
+	if show_page_flip_anim:		#show the animation of the page flipping (if new_id is smaller than old_id, then left; otherwise right)
 		pass
 	
 	
@@ -100,12 +101,22 @@ func _ready():
 			
 	#fill stuff with empty data
 	for i in range(5):
-		notes_about_em_by_id[i] = []
-		notes_from_em_by_id[i] = []
-		secured_non_murderer[i] = false
+		notes_about_em_by_id[i+1] = []
+		notes_from_em_by_id[i+1] = []
+		secured_non_murderer[i+1] = false
 	
 func _process(dt):
-	if visible:
+	if visible:	#and not animation being played
 		#if left key or a is pressed, go back one page, except you cant
+		if Input.is_action_just_pressed("JournalLeft"):
+			var new_page_to_flip_to = current_page - 1
+			if new_page_to_flip_to in accessible_pages:
+				ComputeNewPage(new_page_to_flip_to)
+				DisplayInfo()
+			
 		#if right key or d is pressed, go forward one page, except you cant
-		pass
+		elif Input.is_action_just_pressed("JournalRight"):
+			var new_page_to_flip_to = current_page + 1
+			if new_page_to_flip_to in accessible_pages:
+				ComputeNewPage(new_page_to_flip_to)
+				DisplayInfo()

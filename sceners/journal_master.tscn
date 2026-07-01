@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://c0380pu3cbvgu" path="res://code/journal_master.gd" id="1_6fccn"]
 [ext_resource type="Texture2D" uid="uid://2a1fhllrud13" path="res://assets/UI/In-Game/pngs/IMG_0421.PNG" id="2_ox244"]
 [ext_resource type="Texture2D" uid="uid://bpw2xrgtduvgm" path="res://assets/UI/In-Game/pngs/IMG_0436.PNG" id="3_qsl37"]
+[ext_resource type="Texture2D" uid="uid://l8au7w8ipfvf" path="res://assets/UI/In-Game/Widgets/Arrow_Left.PNG" id="4_o8e4e"]
+[ext_resource type="Texture2D" uid="uid://c83pka0alrm1w" path="res://assets/UI/In-Game/Widgets/Arrow_Right.PNG" id="5_vq7rk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ox244"]
 font_size = 35
@@ -103,17 +105,25 @@ uppercase = true
 [node name="FlipLeftButton" type="Button" parent="." unique_id=122638684]
 self_modulate = Color(1, 1, 1, 0)
 z_index = 3800
-offset_left = 63.0
-offset_top = 420.00003
-offset_right = 103.0
-offset_bottom = 566.0
-scale = Vector2(2.166713, 1.3576592)
+offset_left = 42.0
+offset_top = 387.0
+offset_right = 229.0
+offset_bottom = 533.0
+scale = Vector2(0.88135755, 2.4041498)
 
-[node name="FlipRightButton" type="Button" parent="." unique_id=1077786742]
+[node name="LeftArrowSprite" type="Sprite2D" parent="." unique_id=897127922]
+position = Vector2(124, 570)
+texture = ExtResource("4_o8e4e")
+
+[node name="FlipRightButton" type="Button" parent="." unique_id=1510468682]
 self_modulate = Color(1, 1, 1, 0)
 z_index = 3800
-offset_left = 1092.0
-offset_top = 433.00003
-offset_right = 1132.0
-offset_bottom = 579.0
-scale = Vector2(2.166713, 1.3576592)
+offset_left = 1020.0
+offset_top = 400.0
+offset_right = 1207.0
+offset_bottom = 546.0
+scale = Vector2(0.88135755, 2.4041498)
+
+[node name="RightArrowSprite" type="Sprite2D" parent="." unique_id=348813161]
+position = Vector2(1106, 571)
+texture = ExtResource("5_vq7rk")

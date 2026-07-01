@@ -26,6 +26,8 @@ func OpenThyself(id_to_open_to=1):
 	#flip to given page
 	ComputeNewPage(id_to_open_to,false)
 	
+	UpdateArrowSprites()
+		
 	#do this in the middle of the opening anim
 	DisplayInfo()
 	
@@ -114,6 +116,7 @@ func TrytoFlipOnePageLeft():
 	if new_page_to_flip_to in accessible_pages:
 		ComputeNewPage(new_page_to_flip_to)
 		DisplayInfo()
+	UpdateArrowSprites()
 		
 func TrytoFlipOnePageRight():
 	var new_page_to_flip_to = current_page + 1
@@ -122,6 +125,18 @@ func TrytoFlipOnePageRight():
 		
 		#instead, await stuff; this is only temporary
 		DisplayInfo()
+	UpdateArrowSprites()
+	
+func UpdateArrowSprites():
+	if current_page == accessible_pages[-1]:
+		$RightArrowSprite.hide()
+	else:
+		$RightArrowSprite.show()
+		
+	if current_page == accessible_pages[0]:
+		$LeftArrowSprite.hide()
+	else:
+		$LeftArrowSprite.show()
 	
 func _process(dt):
 	if visible:	#and not animation being played

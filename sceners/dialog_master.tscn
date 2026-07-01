@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://br66goakt4k2d" path="res://sceners/dialog_master.gd" id="1_gjkys"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_q5mv8"]
+font_size = 20
+
 [node name="DialogMaster" type="Node2D" unique_id=1148411461]
 script = ExtResource("1_gjkys")
 
@@ -22,6 +25,7 @@ offset_top = 806.0
 offset_right = 805.01697
 offset_bottom = 853.8568
 scale = Vector2(0.9792701, 1.023888)
+label_settings = SubResource("LabelSettings_q5mv8")
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

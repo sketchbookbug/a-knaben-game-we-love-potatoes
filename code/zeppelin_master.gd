@@ -157,6 +157,10 @@ func change_scene(child,id):
 	
 func _process(dt):
 	#print(flags)
+	if Input.is_key_pressed(KEY_F1):
+		$JournalMaster.OpenThyself()
+	if Input.is_key_pressed(KEY_F2):
+		$JournalMaster.CloseThyself()
 	if currently_fading_out:
 		$FadeoutPolygon.self_modulate.a += fadeout_alpha_steps_in_a_second * dt
 		if current_fadeout_function == "CutsceneStart":

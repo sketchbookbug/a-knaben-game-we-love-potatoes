@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://c0tmcivmg0wdi" path="res://assets/UI/In-Game/Widgets/Door Symbol.PNG" id="25_2b8nx"]
 [ext_resource type="Script" uid="uid://c4tidbkm8w18m" path="res://code/cutscene_master.gd" id="26_45kqk"]
 [ext_resource type="PackedScene" uid="uid://bnj77tk0tdygt" path="res://sceners/interactable_master.tscn" id="27_s56fh"]
+[ext_resource type="PackedScene" uid="uid://c662u2nrjb7o" path="res://sceners/journal_master.tscn" id="28_6mwaq"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0bv50"]
 load_path = "res://.godot/imported/IMG_0435.PNG-4315e8af79e25dd44356bc9125952ccc.ctex"
@@ -73,6 +74,7 @@ scale = Vector2(1.0983267, 4.010813)
 color = Color(0.29803923, 0.29803923, 0.29803923, 1)
 
 [node name="Corners" type="TextureRect" parent="." unique_id=2020888343]
+z_index = 800
 offset_right = 1920.0
 offset_bottom = 1080.0
 texture = ExtResource("3_c5gxh")
@@ -284,6 +286,11 @@ z_index = 40
 
 [node name="InteractableMaster" parent="." unique_id=1124430729 instance=ExtResource("27_s56fh")]
 z_index = 40
+
+[node name="JournalMaster" parent="." unique_id=1636194239 instance=ExtResource("28_6mwaq")]
+visible = false
+z_index = 600
+position = Vector2(734, -10)
 
 [node name="CutsceneMaster" type="Node" parent="." unique_id=755002531]
 script = ExtResource("26_45kqk")

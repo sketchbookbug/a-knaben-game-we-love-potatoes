@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://khwujnyqdwjt" path="res://sceners/play_button.gd" id="1_q5mv8"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_ox244"]
+font_size = 40
+
 [node name="MainMenu" type="Node2D" unique_id=1953608116]
 
 [node name="TitleCardTemp" type="Label" parent="." unique_id=1138297088]
@@ -10,6 +13,7 @@ offset_top = 37.0
 offset_right = 1210.0
 offset_bottom = 293.0
 text = "SUPER COOL FANCY GAME NAME"
+label_settings = SubResource("LabelSettings_ox244")
 horizontal_alignment = 1
 vertical_alignment = 1
 

@@ -1,7 +1,101 @@
 [gd_scene format=3 uid="uid://c662u2nrjb7o"]
 
 [ext_resource type="Script" uid="uid://c0380pu3cbvgu" path="res://code/journal_master.gd" id="1_6fccn"]
+[ext_resource type="Texture2D" uid="uid://2a1fhllrud13" path="res://assets/UI/In-Game/pngs/IMG_0421.PNG" id="2_ox244"]
+[ext_resource type="Texture2D" uid="uid://bpw2xrgtduvgm" path="res://assets/UI/In-Game/pngs/IMG_0436.PNG" id="3_qsl37"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ox244"]
+font_size = 35
+
+[sub_resource type="LabelSettings" id="LabelSettings_qsl37"]
+font_size = 20
 
 [node name="JournalMaster" type="Node2D" unique_id=1636194239]
-visible = false
+position = Vector2(-56, -3)
 script = ExtResource("1_6fccn")
+
+[node name="Wood Background (Reference)" type="TextureRect" parent="." unique_id=550743027]
+offset_left = 614.0
+offset_top = 4.0
+offset_right = 2534.0
+offset_bottom = 1084.0
+texture = ExtResource("2_ox244")
+flip_h = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Journal" type="TextureRect" parent="." unique_id=1249740079]
+visible = false
+offset_left = -393.0
+offset_top = 9.0
+offset_right = 1527.0
+offset_bottom = 1089.0
+texture = ExtResource("3_qsl37")
+metadata/_edit_use_anchors_ = true
+
+[node name="Wood Background2 (Reference)" type="TextureRect" parent="." unique_id=354662006]
+offset_left = -1291.0
+offset_top = 4.0
+offset_right = 629.0
+offset_bottom = 1084.0
+texture = ExtResource("2_ox244")
+metadata/_edit_use_anchors_ = true
+
+[node name="Journal2" type="TextureRect" parent="." unique_id=160748450]
+visible = false
+offset_left = -1282.0
+offset_right = 638.0
+offset_bottom = 1080.0
+texture = ExtResource("3_qsl37")
+metadata/_edit_use_anchors_ = true
+
+[node name="NameLabel" type="Label" parent="." unique_id=297561771]
+z_index = 10
+offset_left = 632.0
+offset_top = 125.0
+offset_right = 1048.0
+offset_bottom = 201.0
+text = "name label"
+label_settings = SubResource("LabelSettings_ox244")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="ProfessionLabel" type="Label" parent="." unique_id=1109493328]
+z_index = 10
+offset_left = 622.0
+offset_top = 202.0
+offset_right = 1038.0
+offset_bottom = 244.0
+text = "profession:"
+label_settings = SubResource("LabelSettings_qsl37")
+uppercase = true
+
+[node name="InfoFromLabel" type="Label" parent="." unique_id=489730954]
+z_index = 10
+offset_left = 619.0
+offset_top = 247.0
+offset_right = 1088.0
+offset_bottom = 510.0
+text = "information from them:"
+label_settings = SubResource("LabelSettings_qsl37")
+uppercase = true
+
+[node name="InfoAboutLabel" type="Label" parent="." unique_id=76089428]
+z_index = 10
+offset_left = 618.0
+offset_top = 520.0
+offset_right = 1087.0
+offset_bottom = 844.0
+text = "information about them:"
+label_settings = SubResource("LabelSettings_qsl37")
+uppercase = true
+
+[node name="CanBeLabel" type="Label" parent="." unique_id=143537545]
+z_index = 10
+offset_left = 614.0
+offset_top = 891.0
+offset_right = 1030.0
+offset_bottom = 933.0
+text = "could be the murderer?"
+label_settings = SubResource("LabelSettings_qsl37")
+uppercase = true

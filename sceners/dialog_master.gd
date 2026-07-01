@@ -172,7 +172,7 @@ func _ready():
 	#import all images for the characters
 	var charimg_folders = DirAccess.get_directories_at("assets/characters")
 	for charimg_folder in charimg_folders:
-		if charimg_folder not in talky_guy_ids_by_names:
+		if charimg_folder not in talky_guy_ids_by_names.keys():
 			continue
 			
 		var current_char_id = talky_guy_ids_by_names[charimg_folder]

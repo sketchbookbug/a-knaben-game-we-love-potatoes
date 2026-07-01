@@ -91,6 +91,11 @@ func _start_FadeIn():
 			if current_scene != 9:	#not in lounge -> should show door icon again
 				$ZeppelinMap/DoorIcon.show()
 			$InteractableMaster.show()
+			
+			for ig in $DialogueMaster.info_gains:
+				$JournalMaster.AddInfo(ig[2],ig[1],ig[0],ig[3])
+				
+			$DialogueMaster.info_gains = []
 		"ItemEnd":
 			StartExistingAfterDialogue()
 			$InteractableMaster.hide()
@@ -99,6 +104,11 @@ func _start_FadeIn():
 			$DialogueMaster.show()
 			currently_zooming_out = false
 			$Background.scale = Vector2(1.0,1.0)
+			
+			for ig in $InteractableMaster.info_gains:
+				$JournalMaster.AddInfo(ig[2],ig[1],ig[0],ig[3])
+				
+			$InteractableMaster.info_gains = []
 		"CutsceneStart":
 			$CutsceneMaster.StartCutscene(current_scene_trans_id)
 		"CutsceneNext":

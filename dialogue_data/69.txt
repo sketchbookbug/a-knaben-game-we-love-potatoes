@@ -10,3 +10,5 @@ FIS_*FRIEND*_OF_JAR_JAR;70
 #next dialogue id;stuff to say in the button
 70;Welp... i exist now :3;IS_*FRIEND*_OF_JAR_JAR
 0;Erm... what the sigma?
+[INFOGAINS]
+1;0;IS JAR JAR BINKS;0

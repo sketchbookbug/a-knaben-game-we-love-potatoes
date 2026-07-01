@@ -8,6 +8,7 @@ var allitemimages = {}
 var description_parts = []
 var ending_options = {}
 var ending_option_flags = {}
+var info_gains = []
 
 var currently_looking_at_item = false
 
@@ -21,6 +22,7 @@ func InitializeItem(item_id):
 	var item_data_lines = item_data.split("\n",false)
 
 	var currently_looking_at_ending_options = false
+	var currently_looking_at_info_gains = false
 	
 	description_parts = []
 	ending_options = {}
@@ -54,6 +56,19 @@ func InitializeItem(item_id):
 			
 			else:
 				current_item_name = l
+				
+		elif "[ENDDESC]" in l:	#now seeing ending options
+			currently_looking_at_ending_options = true
+			continue
+			
+		elif "[INFOGAINS]" in l:	#now seeing info gains
+			currently_looking_at_info_gains = true
+			currently_looking_at_ending_options = false
+			continue
+		
+		elif currently_looking_at_info_gains:
+			var splitted = l.split(";",false)
+			info_gains.push_back([int(splitted[0]),int(splitted[1]),str(splitted[2]),bool(int(splitted[3]))])
 			
 		elif currently_looking_at_ending_options:
 			var splitted = l.split(";",false)
@@ -62,10 +77,6 @@ func InitializeItem(item_id):
 				ending_option_flags[splitted[0]] = splitted[1].split(",",false)
 			else:
 				ending_option_flags[splitted[0]] = []
-			
-		elif "[ENDDESC]" in l:	#now seeing ending options
-			currently_looking_at_ending_options = true
-			continue
 			
 		else:
 			#print("we have arrived here, my friend <", l)

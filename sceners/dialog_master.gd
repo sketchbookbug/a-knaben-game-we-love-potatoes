@@ -10,6 +10,7 @@ var dialogue_image_queue = []
 var dialogue_parts = []
 var ending_options = {}
 var ending_option_flags = {}
+var info_gains = []
 
 var talky_guy_names_by_id = {}
 var talky_guy_ids_by_names = {}
@@ -25,6 +26,7 @@ func InitializeDialog(dialog_id):
 	var dialogue_data_lines = dialogue_data.split("\n",false)
 
 	var currently_looking_at_ending_options = false
+	var currently_looking_at_info_gains = false
 	
 	dialogue_parts = []
 	ending_options = {}
@@ -56,6 +58,19 @@ func InitializeDialog(dialog_id):
 			
 			else:
 				current_talky_guy = l
+				
+		elif "[ENDCONVO]" in l:	#now seeing ending options
+			currently_looking_at_ending_options = true
+			continue
+			
+		elif "[INFOGAINS]" in l:#now seeing info gains
+			currently_looking_at_info_gains = true
+			currently_looking_at_ending_options = false
+			continue
+				
+		elif currently_looking_at_info_gains:
+			var splitted = l.split(";",false)
+			info_gains.push_back([int(splitted[0]),int(splitted[1]),str(splitted[2]),bool(int(splitted[3]))])
 			
 		elif currently_looking_at_ending_options:
 			var splitted = l.split(";",false)
@@ -64,10 +79,6 @@ func InitializeDialog(dialog_id):
 				ending_option_flags[splitted[1]] = splitted[2].split(",",false)
 			else:
 				ending_option_flags[splitted[1]] = []
-			
-		elif "[ENDCONVO]" in l:	#now seeing ending options
-			currently_looking_at_ending_options = true
-			continue
 			
 		else:
 			#print("we have arrived here, my friend <", l)

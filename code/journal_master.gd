@@ -72,6 +72,27 @@ func DisplayInfo():
 	else:
 		$CanBeLabel.text = "SECURED NOT GUILTY"
 
+func AddInfo(info,type_of_info,subject_id,loud=false):
+	match type_of_info:
+		"FROM":
+			notes_from_em_by_id[subject_id].push_back(info)
+		1:
+			notes_from_em_by_id[subject_id].push_back(info)
+		"ABOUT":
+			notes_about_em_by_id[subject_id].push_back(info)
+		0:
+			notes_about_em_by_id[subject_id].push_back(info)
+		"SECUREDNONMURDERER":
+			secured_non_murderer[subject_id] = bool(info)
+		2:
+			secured_non_murderer[subject_id] = bool(info)
+	
+	if loud:
+		ComputeNewPage(subject_id,true)
+	elif current_page == subject_id:
+		ComputeNewPage(subject_id,false)
+		DisplayInfo()
+
 
 
 func _ready():

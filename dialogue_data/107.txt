@@ -1,0 +1,12 @@
+#what were you doing yesterday?
+2
+2;Well... at around 10 pm, i was doing my evening prayer for Braimera, as always...
+1;Around half an hour later I went to the lounge to, you know, relax and look through their library... /n I've found some nice books, but they're mere low-level entertainment.
+1;But I suppose you know that already, right? I mean, you were there too...
+2;I just wanted to speak out my dear sorries for you... /n You must've felt horrible after that argument, and then he was just... gone, you know...
+[ENDCONVO]
+115;And then, you just stayed in the lounge /n the whole night?
+114;What do you mean, I was there too? /n What argument?
+[INFOGAINS]
+2;0;WAS IN HER ROOM PRAYING AROUND 10 PM;0
+2;0;WAS IN THE LOUNGE AFTER 10 PM;0

@@ -65,7 +65,7 @@ func DisplayInfo():
 	#display that information
 	$NameLabel.text = current_name_and_profession[0]
 	$ProfessionLabel.text = "Profession: " + current_name_and_profession[1]
-	$InfoFromLabel.text = from_text
+	#$InfoFromLabel.text = from_text
 	$InfoAboutLabel.text = about_text
 	if could_be_it:
 		$CanBeLabel.text = "COULD BE THE MURDERER?"
@@ -79,9 +79,11 @@ func AddInfo(info,type_of_info,subject_id,loud=false):
 		1:
 			notes_from_em_by_id[subject_id].push_back(info)
 		"ABOUT":
-			notes_about_em_by_id[subject_id].push_back(info)
+			if info not in notes_about_em_by_id[subject_id]:
+				notes_about_em_by_id[subject_id].push_back(info)
 		0:
-			notes_about_em_by_id[subject_id].push_back(info)
+			if info not in notes_about_em_by_id[subject_id]:
+				notes_about_em_by_id[subject_id].push_back(info)
 		"SECUREDNONMURDERER":
 			secured_non_murderer[subject_id] = bool(info)
 		2:

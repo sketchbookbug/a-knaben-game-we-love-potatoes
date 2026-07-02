@@ -1,0 +1,12 @@
+FKNOWS_LESBIAN_2;116
+2
+#did you just stay in the lounge
+2;Well, I went to my room to pray just short before midnight...
+1;But after that, I went back to the lounge... A-and, you know, just... looked through the library more.
+1;I must've fallen asleep at some point, I think... /n And I talked to the captain on the flight deck when I woke up, which was around 1:40 am or so.
+1;I'm sure the captain saw me in the lounge... She went to the kitchen at around midnight, so yeah, that's something I heard...
+[ENDCONVO]
+102;I'm sure you definetly had an... /n interesting evening.
+[INFOGAINS]
+4;0;WAS IN THE KITCHEN AROUND MIDNIGHT;0
+2;0;PRAYED IN HER ROOM AROUND MIDNIGHT;0

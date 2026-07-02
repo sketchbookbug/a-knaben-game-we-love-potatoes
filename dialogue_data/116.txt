@@ -1,0 +1,9 @@
+2
+#did you just stay in the lounge but they both know she's lesbian
+2;Well, I went to my room to pray just short before midnight...
+1;But after that, I went back to the lounge... And then to the flight deck... t-talk with Nad' and... /n ... You know, I stayed there 'till that poor companion of yours was found.
+[ENDCONVO]
+102;I'm sure you definetly had an... /n interesting evening.
+[INFOGAINS]
+4;0;WAS IN THE KITCHEN AROUND MIDNIGHT;0
+2;0;PRAYED IN HER ROOM AROUND MIDNIGHT;0

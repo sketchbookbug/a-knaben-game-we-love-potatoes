@@ -1,0 +1,13 @@
+#can you tell me about Braimera?
+2
+0;Oh, you can't even imagine how much I've hoped someone would finally ask me about Braimera!
+0;Well, let's get started, then!
+2;Braimera is one of the main goddesses of my folk, the gnomes of Woonplaats...
+2;Her functions are mostly tied to death, afterlife, life, and the sun.
+2;Us sisters of Braimera believe that the great Braimera sleeps in the sun, and when people die, they get brought before her.
+0;Then, she judges if they've lived a good life, deserve another one, been a good person, and... *bla bla bla*
+0;*bla bla* the trial of *bla bla bla* glorious, heart-warming and calm... just like the sun itself, and *bla bla bla*
+[ENDCONVO]
+102;I think we should focus on the /n murder case now, shouldn't we?
+[INFOGAINS]
+2;0;IS A MEDIOCRE RELIGIOUS MISSIONARY AT BEST;0

@@ -1,0 +1,9 @@
+#I heard you two are lesbians?
+2
+1;What? ... W-who told you that... kind of... gossip?
+1;Well, I suppose you're right...
+[ENDCONVO]
+113;Well, then can you tell me /n more about the captain?
+[INFOGAINS]
+2;0;IS A LESBIAN;0
+4;0;IS A LESBIAN;0

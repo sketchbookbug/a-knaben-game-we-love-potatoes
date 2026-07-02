@@ -8,6 +8,6 @@ FHAS_SPOKEN_TO_CLERIC_BEFORE;102
 0;I mean, you know, finding the murderer and allat!
 2;I know that's kinda selfish, so please forgive me...
 [ENDCONVO]
-102;Shall we begin?;HAS_SPOKEN_TO_CLERIC_BEFORE
+102;Shall we begin?;HAS_SPOKEN_TO_CLERIC_BEFORE,KNOWS_LESBIAN_1
 0;We shall continue soon.;HAS_SPOKEN_TO_CLERIC_BEFORE
 [INFOGAINS]

@@ -1,0 +1,18 @@
+FKNOWS_LESBIAN_2;113
+#What do you know about the captain? -> but you can tell her you know she's a lesbian
+2
+1;Well... *tee hee* ...
+1;She seems... Fine, I supposed *chuckles*
+1;But I don't know anything about her, pretty much...
+1;She's been pretty friendly to me, so yeah, I really don't think she'd do something like that...
+1;Can we talk about something else, I feel kind of uncomfortable...
+0;Wait, I think I know something that could be interesting!
+0;She was on the flight deck almost the whole night, so she can't really have done anything...
+2;At one point, she went to the kitchen and got herself a snack, but I don't think she could've had the time... /n To, you know, do something terrible like murder!
+1;I was... in the lounge most of the time, so I would've noticed her doing any... shenanigans.
+[ENDCONVO]
+102;Your help is appreciated... /n That you can count on.
+112;I heard you and the captain are both lesbians...;KNOWS_LESBIAN_2
+[INFOGAINS]
+2;0;DOESNT WANT TO SPEAK ABOUT CAPTAIN;0
+4;0;WAS IN THE KITCHEN AROUND MIDNIGHT;0

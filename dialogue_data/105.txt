@@ -1,5 +1,11 @@
 2
 #What do you know about Rumbleberry?
-0;He seems like a hearthy guy!
+0;He seems like a warm-hearted guy - Just like his delicious food!
+0;I mean... You didn't eat it, but it was one of the best stews i've ever had the pleasure of tasting!
+2;I'm sure Braimera... And whoever he prays to... Is with him!
+1;And I also can't imagine him doing anything to your companion, Mr. Goscinski... /n They seemed to like each other.
+1;But I didn't see him at all last night...
+0;But I do remember Nad saying she saw him in the kitchen at around midnight, I think...
 [ENDCONVO]
+110;You mean the captain, Nadezhda?
 [INFOGAINS]

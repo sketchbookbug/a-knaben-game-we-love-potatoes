@@ -1,0 +1,16 @@
+#Can you tell me more about the captain?
+2
+0;Well, we both were on the flight deck since about midnight.
+0;She got herself a bit of food from the kitchen, and then we... talked for a bit.
+2;I don't think anybody else was there for a long time, and she couldn't have had enough time /n to complete such a grim task as tearing away your dear companion from the life /n his gods have prophesized for him...
+2;And I don't think she would ever do that, anyways. She believes in mighty Braimera, too.
+0;Since I've been in the lounge and in my room for prayer the most time, I don't think she's left the flight deck that night. /n I think she's talked with that... "aristocrate", as he likes to call himself, around 10 pm?
+1;I hope that helped you more... 
+1;I know that Nad' can look pretty scary - I was scared of her, too, when we met...
+0;But deep in her heart, she's a good fellow!
+[ENDCONVO]
+102;Thank you for speaking yourself out. /n I trust this'll have cleared her from /n any suspicion i've had towards her.
+[INFOGAINS]
+4;0;WAS IN THE KITCHEN AROUND MIDNIGHT;0
+4;0;WAS ON THE FLIGHT DECK THE WHOLE NIGHT;0
+1;0;TALKED WITH CAPTAIN ON FLIGHTDECK AT 10 PM;0

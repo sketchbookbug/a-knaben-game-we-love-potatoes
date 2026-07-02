@@ -64,28 +64,30 @@ uppercase = true
 
 [node name="ProfessionLabel" type="Label" parent="." unique_id=1109493328]
 z_index = 10
-offset_left = 622.0
-offset_top = 202.0
-offset_right = 1038.0
-offset_bottom = 244.0
+offset_left = 617.0
+offset_top = 200.0
+offset_right = 1033.0
+offset_bottom = 242.0
 text = "profession:"
 label_settings = SubResource("LabelSettings_qsl37")
 uppercase = true
 
 [node name="InfoFromLabel" type="Label" parent="." unique_id=489730954]
 z_index = 10
-offset_left = 619.0
-offset_top = 247.0
-offset_right = 1088.0
-offset_bottom = 427.0
-text = "information from them:"
+offset_left = 4600.0
+offset_top = -761.0
+offset_right = 5069.0
+offset_bottom = -581.0
+text = "information from them:
+#OUT-OF-ORDER
+"
 label_settings = SubResource("LabelSettings_qsl37")
 uppercase = true
 
 [node name="InfoAboutLabel" type="Label" parent="." unique_id=76089428]
 z_index = 10
 offset_left = 617.0
-offset_top = 426.0
+offset_top = 237.0
 offset_right = 1086.0
 offset_bottom = 880.0
 text = "information about them:"
